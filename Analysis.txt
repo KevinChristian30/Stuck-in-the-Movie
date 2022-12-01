@@ -1,0 +1,160 @@
+Stuck in the Movie
+==================
+
+1. Manager
+=> View Revenue from Ticket Sales, Food Orders, Beverage Orders, Advertisements, and Partnerships
+=> View Expenses from Facilities Improvement, Maintenance, Electricity, Staff Wages, Taxes, etc
+=> View Movie Schedule
+	- Obtain Information on Schedule Delays
+	- Obtain Information on Comparisons between number of tickets sold, and the 	number 	of attendees, etc
+=> View Facilities and Equipment
+=> View Membership
+=> View Employee
+	- Accept/Reject Employee Resignation
+=> Reports are Shown with Data Visualization
+	- Filter Time Period
+	- Filter Data based on Important Attributes
+=> Request New Facilities and Equipments
+=> Report broken Facilities and Equipments
+
+2. Human Resource
+=> View Employee's Personal Information
+	- Job Details
+	- Contact Information
+	- Warning Letter
+	- Salary
+	- Personal Leave
+	- Working Time
+	- etc
+=> Manage Employee Recruitment
+	- Employee Recruitment Process
+		> Registration
+		> Candidate Selection
+		> Technical Test
+		> Interview
+		> Meeting
+=> Assign Warning Letter to Employee (With Manager Approval)
+=> Fire Employee with 3 Warning Letters (With Manager Approval)
+=> Make Salary Adjustments based on Employee's Work Performance
+	- Preparing a list of employees that will receive a salary change (With Manager Approval)
+	- The accepted Employees will be forwarded to the accounting and finance department for further processing
+=> Set Employee Working Time
+=> Check Employee Attendance
+=> Accept/Reject Employee Personal Leave Request
+=> Request New Facilities and Equipments
+=> Report broken Facilities and Equipments
+
+3. Accounting and Finance
+=> Managing Cash Flow
+=> Receive a fund request
+	- Accept Fund Request (With Manager Approval)
+	- Reject Fund Request (With Manager Approval)
+	- Revise Fund Request (With Manager Approval)
+=> Calculate Taxes based on Article 58 Paragraph (1) Law 
+Number 1 of 2022 concerning Financial Relations between the Central Government and Regional 
+Government
+=> Process Salary Change
+=> Request New Facilities and Equipments
+=> Report broken Facilities and Equipments
+
+4. Storage Department
+=> Manage Facility and Equipment
+=> Label Everything the Company Owns
+=> Tracking Who, When, and Where the Facility and Equipment were last used.
+=> Purchasing New Facilities and Equipments Requested by Other Departments (With Accounting and Finance Approval)
+=> Calculate Shortage or Excess Money based on the actual price and the fund that has been approved by the accounting and finance department
+=> Check and fix broken facility, and report back to the reporter
+=> Send Purchase data for accountability
+=> Request New Facilities and Equipments
+=> Report broken Facilities and Equipments
+
+5. External Department
+=> Maintain relationships with external parties
+=> Accept communication from external parties
+=> Forward communication to other parties
+=> Summarize and record information (if needed)
+=> Manager must know every decision made by this department
+=> External Parties:
+	- Movie Producers
+		> Knowing the details of the movie
+		> Data will be send to the movie department
+		> Send detailed reports to external parties after movie period is over
+	- Food and Beverage Suppliers
+		> Search for Suppliers
+		> Contact the supplier to request for more supplies when the supplies are running low 		based on data from storage department (With Accounting and Finance's Approval)
+	- Advertising Department
+		> Search for companies that want to advertise  
+		> Knowing the details of the advertisement
+		> Communicate with the finance department to determine the minimum cost required for 		the advertisement
+		> Send detailed reports to the external party after the advertisement period is over.
+=> Request New Facilities and Equipments
+=> Report broken Facilities and Equipments
+
+6. Promotion and Event Department
+=> Manage Promo and Events
+=> View list of customers who have become members and inform them about ongoing promos and events.
+=> Generate and distribute vouchers to customers who meet certain criteria based on analysis results.
+=> When customer wants to use the voucher, the effect will automatically be applied so the cashier don't need to enter the voucher manually
+=> Request New Facilities and Equipments
+=> Report broken Facilities and Equipments
+
+7. Movie Department
+=> Front line for Serving Customers who want to watch movies
+=> Divided into 3 divisions:
+	- Schedule Division
+		> Scheduling Movies that has a contract
+		> Choose the movies to be shown along with the number of shows on a specific day
+		> The system will create a schedule aucomatically
+		> Can't override the generated schedule
+	- Front Office Division
+		> Serve customers who want to buy tickets
+		> Ask movie title
+		> Ask payment method
+		> Ask for membership
+			+ If Yes, add the points, if enough for discount, ask the customer if they 			want to use it
+			+ If No, ask if they want to create
+		> Create, Print, Give Ticket
+	- Operation Division
+		> Preparing the theater's rooms that will be used
+		> Guide customers from previous schedule to dispose garbage at the right place
+		> Clean theater room
+		> Check the movies that will be played
+		> Choose advertisements that will be shown
+		> Ensuring the projector can run
+		> etc
+		> Must stand by at least 20 minutes before each movie ends
+		> Check customer ticket before letting customers in
+=> Request New Facilities and Equipments
+=> Report broken Facilities and Equipments
+
+8. Cafe Department
+=> Serve customers who want to buy foods and beverages
+=> Divided into 2 divisions:
+	- Front Office
+		> Serving customers who want to buy food
+		> Ask for details about food and beverages
+		> Ask for payment method
+		> Print receipt
+		> Forward order to kitchen division
+		> Display order status on top of division
+	- Kitchen
+		> Making food and beverages
+		> Change status from ordered to processed
+		> Change status from processed to ready
+=> Request New Facilities and Equipments
+=> Report broken Facilities and Equipments
+
+9. Administrator Department
+=> Maintain system
+=> Can Access all system
+=> Can manage what menus any department can access
+=> Can reset employee password when needed
+
+Employee
+=> Resign
+	- Submit Resignation Letter
+=> Request Work Time Change at the beginning of each month
+=> Submit personal leave request
+
+Upcoming Employee
+=> Enter Recruitment Process
