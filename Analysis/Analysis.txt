@@ -179,6 +179,7 @@ Movie Department (Operation)
 Cafe Department (Front Office)
 Cafe Department (Kitchen)
 Administrator Department
+Employee Candidate
 
 
 

@@ -1,0 +1,3 @@
+1. Manager bisa view employee dengan detail yang sama seperti orang divisi human resource.
+2. Pemecatan employee bisa dilakukan kapan saja, tentunya sesuai dengan kontrak kerja, intinya ada tombol untuk memecat employee, tombol itu akan send notif ke HR untuk bikin surat PHK. HR akan antar surat PHK ke ruang manager. Manager akan approve dan panggil employee ke ruang manager untuk di PHK.
+3. List orang yang gajinya akan dinaikkan akan didiskusikan di rapat kenaikan gaji antara manager dan human resource. Rapat itu akan menghasilkan list employee yang gajinya akan dinaikkan, yang punya hak untuk meneruskan list tersebut ke divisi accounting and finance adalah manager, maka manager 
