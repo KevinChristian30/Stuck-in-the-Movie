@@ -1,3 +1,17 @@
 1. Manager bisa view employee dengan detail yang sama seperti orang divisi human resource.
 2. Pemecatan employee bisa dilakukan kapan saja, tentunya sesuai dengan kontrak kerja, intinya ada tombol untuk memecat employee, tombol itu akan send notif ke HR untuk bikin surat PHK. HR akan antar surat PHK ke ruang manager. Manager akan approve dan panggil employee ke ruang manager untuk di PHK.
 3. List orang yang gajinya akan dinaikkan akan didiskusikan di rapat kenaikan gaji antara manager dan human resource. Rapat itu akan menghasilkan list employee yang gajinya akan dinaikkan, yang punya hak untuk meneruskan list tersebut ke divisi accounting and finance adalah manager, maka manager 
+4. Manager dan divisi accounting and finance memiliki tampilan cash flow yang sama, itu karena manager bertanggung jawab atas semua divisi dan manager harus memberikan izin untuk berbagai hal.
+5. Fund request yang masuk akan didiskusikan oleh accounting and finance department bersama dengan manager pada meeting yang berlangsung secara rutin, yang memiliki akses untuk accept, reject, dan revise adalah manager.
+6. Divisi storage juga bisa melihat hal yang bisa dilihat oleh manager mengenai facilities and equipment.
+
+INSERT INTO MsCustomer VALUES ('CU001', 'Akbar', 'Male', 'Jl.Batu Tinggi', 'akbar@gmail.com', '2000-10-12');
+
+CREATE TABLE MsCustomer (
+    CustomerID CHAR(5) PRIMARY KEY CHECK (CustomerID LIKE 'CU[0-9][0-9][0-9]'),
+    CustomerName VARCHAR(50) NOT NULL,
+    CustomerGender VARCHAR(10) NOT NULL,
+    CustomerAddress VARCHAR(50) NOT NULL,
+    CustomerEmail VARCHAR(50) NOT NULL,
+    CustomerDOB DATE NOT NULL
+);
