@@ -4,14 +4,9 @@
 4. Manager dan divisi accounting and finance memiliki tampilan cash flow yang sama, itu karena manager bertanggung jawab atas semua divisi dan manager harus memberikan izin untuk berbagai hal.
 5. Fund request yang masuk akan didiskusikan oleh accounting and finance department bersama dengan manager pada meeting yang berlangsung secara rutin, yang memiliki akses untuk accept, reject, dan revise adalah manager.
 6. Divisi storage juga bisa melihat hal yang bisa dilihat oleh manager mengenai facilities and equipment.
-
-INSERT INTO MsCustomer VALUES ('CU001', 'Akbar', 'Male', 'Jl.Batu Tinggi', 'akbar@gmail.com', '2000-10-12');
-
-CREATE TABLE MsCustomer (
-    CustomerID CHAR(5) PRIMARY KEY CHECK (CustomerID LIKE 'CU[0-9][0-9][0-9]'),
-    CustomerName VARCHAR(50) NOT NULL,
-    CustomerGender VARCHAR(10) NOT NULL,
-    CustomerAddress VARCHAR(50) NOT NULL,
-    CustomerEmail VARCHAR(50) NOT NULL,
-    CustomerDOB DATE NOT NULL
-);
+7. External department akan menerima email dari pihak luar yang ingin bekerja sama, semua pihak luar yang ingin bekerja sama harus melalui divisi ini untuk mencegah miskomunikasi.
+8. Information dari external party tidak bisa diubah setelah di simpan untuk menjaga integrity.
+9. Semua interaksi dengan movie producer, food and beverage supplier, dan advertising partner akan dilakukan dengan email.
+10. Untuk pembelian supply tambahan, divisi cafe akan meminta request akan hal apa saja yang dibutuhkan kepada divisi storage. Jika yang diminta sedang tersedia, maka tim storage akan memberikannya, tapi jika tidak tim storage akan menghubungi divisi external untuk membeli supplynya. Divisi storage juga bisa request untuk membeli supply jika stock barang sisa sedikit tanpa request dari divisi cafe.
+11. Komunikasi budget marketing antara divisi external dan accounting and finance akan berkomunikasi via email mengenai minimum cost required.
+12. Promo yang disebarkan kepada member oleh divisi promo and event akan dikirim via email.
