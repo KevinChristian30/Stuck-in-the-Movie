@@ -10,3 +10,4 @@
 10. Untuk pembelian supply tambahan, divisi cafe akan meminta request akan hal apa saja yang dibutuhkan kepada divisi storage. Jika yang diminta sedang tersedia, maka tim storage akan memberikannya, tapi jika tidak tim storage akan menghubungi divisi external untuk membeli supplynya. Divisi storage juga bisa request untuk membeli supply jika stock barang sisa sedikit tanpa request dari divisi cafe.
 11. Komunikasi budget marketing antara divisi external dan accounting and finance akan berkomunikasi via email mengenai minimum cost required.
 12. Promo yang disebarkan kepada member oleh divisi promo and event akan dikirim via email.
+13. Harga tiket tergantung hari, bukan sama film	
