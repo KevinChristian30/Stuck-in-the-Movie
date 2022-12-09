@@ -1,14 +1,31 @@
-- Manager bisa view employee dengan detail yang sama seperti orang divisi human resource.
-- Pemecatan employee bisa dilakukan kapan saja, tentunya sesuai dengan kontrak kerja, intinya ada tombol untuk memecat employee, tombol itu akan send notif ke HR untuk bikin surat PHK. HR akan antar surat PHK ke ruang manager. Manager akan approve dan panggil employee ke ruang manager untuk di PHK.
-- List orang yang gajinya akan dinaikkan akan didiskusikan di rapat kenaikan gaji antara manager dan human resource. Rapat itu akan menghasilkan list employee yang gajinya akan dinaikkan, yang punya hak untuk meneruskan list tersebut ke divisi accounting and finance adalah manager. Divisi finance hanya bisa melihat list orang yang gajinya akan dinaikan, lalu menaikannya.
-- Employee bisa request working hour kapan aja, tapi tetep HR yang tentuin, dan ditentuinnya setiap awal bulan.
-- Manager dan divisi accounting and finance memiliki tampilan cash flow yang sama, itu karena manager bertanggung jawab atas semua divisi dan manager harus memberikan izin untuk berbagai hal.
-- Fund request yang masuk akan didiskusikan oleh accounting and finance department bersama dengan manager pada meeting yang berlangsung secara rutin, yang memiliki akses untuk accept, reject, dan revise adalah manager.
-- Divisi storage juga bisa melihat hal yang bisa dilihat oleh manager mengenai facilities and equipment.
-- External department akan menerima email dari pihak luar yang ingin bekerja sama, semua pihak luar yang ingin bekerja sama harus melalui divisi ini untuk mencegah miskomunikasi.
-- Information dari external party tidak bisa diubah setelah di simpan untuk menjaga integrity.
-- Semua interaksi dengan movie producer, food and beverage supplier, dan advertising partner akan dilakukan dengan email.
-- Untuk pembelian supply tambahan, divisi cafe akan meminta request akan hal apa saja yang dibutuhkan kepada divisi storage. Jika yang diminta sedang tersedia, maka tim storage akan memberikannya, tapi jika tidak tim storage akan menghubungi divisi external untuk membeli supplynya. Divisi storage juga bisa request untuk membeli supply jika stock barang sisa sedikit tanpa request dari divisi cafe.
-- Komunikasi budget marketing antara divisi external dan accounting and finance akan berkomunikasi via email mengenai minimum cost required.
-- Promo yang disebarkan kepada member oleh divisi promo and event akan dikirim via email.
-- Harga tiket tergantung hari, bukan sama film	
+1. Manager melihat cashflow yang sudah diproses, tampilan tersebut berbeda dengan yang dilihat oleh divisi accounting and finance.
+2. Manager melihat movie schedule yang sudah diproses, tampilannya berbeda dengan yang dilihat oleh divisi schedule.
+3. ViewMembership berupa laporan karena manager ingin mengetahui apakah programmnya mendapat entusiasme tinggi. Manager bisa melihat membership dengan lebih detail karena fungsinya untuk dianalisa, sementara tim promosi hanya untuk memberikan offer.
+4. Manager melihat employee sesuai dengan kebutuhannya (warning letter, personal leave request), manager tidak perlu melihat personal information employee.
+5. Proses rekrutmen akan menggunakan aplikasi lain seperti nar.binus, sehinggga sistem internal dari stuck-in-the-movie tidak perlu mengurusnya.
+6. Pembuatan akun untuk employee baru akan dilakukan di aplikasi lain (biasanya yang digunakan oleh HR), aplikasi ini akan terhubung ke database yang sama.
+7. Warning Letter yang diberikan harus disetujui oleh manager. HR akan mengirim warning letter via email/secara langsung, tetapi HR harus mempropose warning letternya terlebih dahulu melalui sistem. Jika HR memproposenya melalui email, maka manager akan repot memfilter emailnya.
+8. Pemecatan employee dilakukan dengan sistemnya HR. Yang memecat adalah Manager.
+Flow: -> Employee yang mau dipecat dipanggil ke ruang manager
+      -> Employee menandatangani surat-surat, dll
+      -> Manager memberitahu HR
+      -> Data employee diproses di aplikasi HR
+      -> Maka, employee tersebut tidak akan terlihat lagi di system ini
+9. Salary adjustment diurus oleh HR dengan aplikasi HR. 
+Flow: -> HR menyiapkan daftar employee yang gajinya mau dinaikkan
+      -> HR berdiskusi dengan manager untuk menentukan employee mana yang gajinya akan dinaikkan
+      -> Manager meneruskan daftar tersebut ke divisi accounting and finance
+      -> Accounting and finance akan menggunakan sistem lainnya lagi untuk mengubah gaji karyawan
+10. HR bisa cek employee attendance di use case view employee's personal information
+12. Fund request yang masuk akan didiskusikan, tapi yang berinteraksi dengan sistem untuk memberikan respon adalah divisi accounting and finance.
+13. Pembelian barang yang dilakukan oleh storage department akan menggunakan kartu kredit perusahan. Employee dari divisi storage akan mengumpulkan bukti transaksi setelah transaksi dilakukan. Employee harus request barang yang ingin dibeli dan divisi finance and accounting bisa accept/reject/revise sama seperti fund request.
+14. External party yang ingin berkomunikasi akan mengirimkan email.
+
+
+
+
+
+
+
+
+
