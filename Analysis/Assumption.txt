@@ -5,22 +5,13 @@
 5. Proses rekrutmen akan menggunakan aplikasi lain seperti nar.binus, sehinggga sistem internal dari stuck-in-the-movie tidak perlu mengurusnya.
 6. Pembuatan akun untuk employee baru akan dilakukan di aplikasi lain (biasanya yang digunakan oleh HR), aplikasi ini akan terhubung ke database yang sama.
 7. Warning Letter yang diberikan harus disetujui oleh manager. HR akan mengirim warning letter via email/secara langsung, tetapi HR harus mempropose warning letternya terlebih dahulu melalui sistem. Jika HR memproposenya melalui email, maka manager akan repot memfilter emailnya.
-8. Pemecatan employee dilakukan dengan sistemnya HR. Yang memecat adalah Manager.
-Flow: -> Employee yang mau dipecat dipanggil ke ruang manager
-      -> Employee menandatangani surat-surat, dll
-      -> Manager memberitahu HR
-      -> Data employee diproses di aplikasi HR
-      -> Maka, employee tersebut tidak akan terlihat lagi di system ini
-9. Salary adjustment diurus oleh HR dengan aplikasi HR. 
-Flow: -> HR menyiapkan daftar employee yang gajinya mau dinaikkan
-      -> HR berdiskusi dengan manager untuk menentukan employee mana yang gajinya akan dinaikkan
-      -> Manager meneruskan daftar tersebut ke divisi accounting and finance
-      -> Accounting and finance akan menggunakan sistem lainnya lagi untuk mengubah gaji karyawan
+8. Pemecatan employee dilakukan oleh manager.
+9. Salary adjustment diurus HR, Manager, dan Accounting and Finance. HR akan menyiapkan daftar employee yang gajinya ingin dinaikkan, HR lalu mendiskusikannya dengan manager dan mengirimkan daftar employee berserta kenaikan gajinya ke manager melalui sistem. Jika manager menyetujuinya, data akan otomatis diteruskan ke accounting and finance untuk di finalize (diubah di databasenya).
 10. HR bisa cek employee attendance di use case view employee's personal information
 12. Fund request yang masuk akan didiskusikan, tapi yang berinteraksi dengan sistem untuk memberikan respon adalah divisi accounting and finance.
 13. Pembelian barang yang dilakukan oleh storage department akan menggunakan kartu kredit perusahan. Employee dari divisi storage akan mengumpulkan bukti transaksi setelah transaksi dilakukan. Employee harus request barang yang ingin dibeli dan divisi finance and accounting bisa accept/reject/revise sama seperti fund request.
 14. External party yang ingin berkomunikasi akan mengirimkan email.
-
+15. 
 
 
 
