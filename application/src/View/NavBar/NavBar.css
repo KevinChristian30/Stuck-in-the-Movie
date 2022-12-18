@@ -1,0 +1,40 @@
+@import url('../global.css');
+
+#navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background-color: var(--primary-dark);
+  font-family: var(--main-font);
+  width: 100%;
+  position: fixed;
+}
+
+a{
+  background-color: var(--primary-dark);
+  color: var(--tertiary);
+  text-decoration: none;
+}
+
+.left, .middle, .right{
+  background-color: var(--primary-dark);
+}
+
+.left{
+  margin-left: 30px;
+}
+
+.right{
+  margin-right: 30px;
+}
+
+.middle{
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.logo{
+  font-weight: bold;
+}

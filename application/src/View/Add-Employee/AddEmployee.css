@@ -1,0 +1,102 @@
+@import url("../global.css");
+
+.add-employee-phonenumber::-webkit-outer-spin-button, 
+.add-employee-phonenumber::-webkit-inner-spin-button,
+.add-employee-salary::-webkit-inner-spin-button,
+.add-employee-salary::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#add-employee-address{
+  resize: none;
+}
+
+.add-employee{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* height: 100vh; */
+  justify-content: center;
+  font-family: var(--main-font);
+  color: var(--tertiary);
+  font-size: 20px;
+}
+
+.add-employee-input-container{
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--primary-dark);
+  margin-bottom: 10px;
+}
+
+#add-employee-form{
+  background-color: var(--primary-dark);
+  padding: 50px;
+  box-shadow: 0 0 10px 0px var(--primary-light);
+  width: 800px;
+  border-radius: 10px;
+  margin: 150px 0 100px 0;
+}
+
+#add-employee-form input, 
+#add-employee-form textarea,
+#add-employee-form select, 
+#add-employee-form option{
+  border: 2px solid var(--tertiary);
+  background-color: var(--primary-dark);
+  color: var(--tertiary);
+  width: 400px;
+  outline: 0;
+}
+
+#add-employee-form select, 
+#add-employee-form option{
+  width: 403px;
+}
+
+#add-employee-form textarea{
+  height: 100px;
+}
+
+#add-employee-form label{
+  background-color: var(--primary-dark);
+}
+
+#title{
+  background-color: var(--primary-dark);
+  margin-bottom: 10px;
+}
+
+#add-employee-dob::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+#add-employee-submit-button {
+  align-items: center;
+  background-color: var(--tertiary);
+  border-radius: 12px;
+  box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
+  box-sizing: border-box;
+  color: var(--primary-dark);
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-size: 1.2rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s,-webkit-box-shadow .2s;
+  border: 0;
+  margin-top: 40px;
+  height: 40px;
+}
+
+#add-employee-submit-button:hover {
+  box-shadow: 0 0 1px 1px var(--tertiary);
+}
