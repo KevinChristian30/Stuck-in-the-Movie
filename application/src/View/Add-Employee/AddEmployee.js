@@ -1,11 +1,9 @@
 import "./AddEmployee.css";
 
-import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
-import { auth } from "../../Utility/firebase-config";
 
-import { PasswordGenerator } from "../../Utility/PasswordGenerator";
 import NavBar from "../NavBar/NavBar";
+import AddEmployeeController from "../../Controller/AddEmployeeController";
 
 const AddEmployee = () => {
 
@@ -17,13 +15,12 @@ const AddEmployee = () => {
   const [salary, setSalary] = useState(0);
   const [address, setAddress] = useState('');
   const [dateOfBirth, setDateOfBirth] = useState('');
-  
-  const createEmployee = (e) => {
+
+  const handleAddEmployee = async (e) => {
 
     e.preventDefault();
-    createUserWithEmailAndPassword(auth, email, 
-      PasswordGenerator.getInstance().generatePassword(name, dateOfBirth));
-      
+    AddEmployeeController.createEmployee(name, email, phoneNumber, gender, department, salary, address, dateOfBirth);
+
   }
 
   return ( 
@@ -31,7 +28,7 @@ const AddEmployee = () => {
       <NavBar />
       <div className="add-employee">
         
-        <form action="" id="add-employee-form" onSubmit={createEmployee}>
+        <form action="" id="add-employee-form" onSubmit={handleAddEmployee}>
           <h1 id="title">Add Employee</h1>
           <br />  
           <div className="add-employee-input-container">
