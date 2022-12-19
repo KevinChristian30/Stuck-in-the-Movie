@@ -11,7 +11,7 @@
   position: fixed;
 }
 
-a{
+a, .logout-button{
   background-color: var(--primary-dark);
   color: var(--tertiary);
   text-decoration: none;
@@ -37,4 +37,11 @@ a{
 
 .logo{
   font-weight: bold;
+}
+
+.logout-button{
+  border: none;
+  font-weight: bold;
+  font-family: (--main-font);
+  font-size: 16px;
 }

@@ -1,4 +1,4 @@
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import AddEmployee from './Add-Employee/AddEmployee';
 import './App.css';
 import Home from './Home/Home';
@@ -9,19 +9,11 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/add-employee">
-            <NavBar />
-            <AddEmployee />
-          </Route>
-          <Route path="/">
-            <NavBar />
-            <Home />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/add-employee" element={<AddEmployee />}></Route>
+          <Route path="/" element={<Home />}></Route>
+        </Routes>
       </div> 
     </Router>
   );

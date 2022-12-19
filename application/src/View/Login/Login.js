@@ -3,17 +3,23 @@ import "./Login.css";
 import { useState } from "react";
 import { auth } from "../../Utility/firebase-config";
 import { signInWithEmailAndPassword } from "firebase/auth"
-import AuthDetails from "./AuthDetails";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const nav = useNavigate();
 
   const logIn = (e) => {
 
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password);
+    signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
+      const user = userCredential.user;
+      nav('/');
+    }).catch((error) => {
+      alert("Wrong Credentials");
+    });
 
   }
 
@@ -36,7 +42,6 @@ const Login = () => {
           <button id="login-button">Login</button>
         </form>
       </div>
-      <AuthDetails />
     </div>
     
 

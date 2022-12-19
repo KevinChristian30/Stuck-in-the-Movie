@@ -1,10 +1,19 @@
 import "./NavBar.css";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../Utility/firebase-config";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
+
+  const nav = useNavigate();
+
+  const handleLogOut = () => {
+
+    auth.signOut();
+    nav('/login');
+
+  }
+
   return ( 
       <div id="navbar">
         <div className="left">
@@ -16,7 +25,7 @@ const NavBar = () => {
           <Link to='/'>Menu 3</Link>
         </div>
         <div className="right">
-          <Link className="logout-button" to='/login'>Log Out</Link>
+          <button className="logout-button" onClick={ handleLogOut }>Log Out</button>
         </div>
       </div>
    );
