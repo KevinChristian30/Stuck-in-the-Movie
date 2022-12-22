@@ -8,9 +8,12 @@
     "@testing-library/user-event": "^13.5.0",
     "firebase": "^9.15.0",
     "react": "^18.2.0",
+    "react-data-table-component": "^7.5.3",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.5.0",
     "react-scripts": "^5.0.1",
+    "styled-components": "^5.3.6",
+    "uui": "^1.0.7",
     "web-vitals": "^2.1.4"
   },
   "main": "src/electron-starter.js",
@@ -40,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "@types/node": "^18.11.17",
     "electron": "^22.0.0"
   }
 }

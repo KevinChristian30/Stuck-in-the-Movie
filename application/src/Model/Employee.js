@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { collection, addDoc } from "firebase/firestore"
-import { auth } from "../Utility/firebase-config";
+import { collection, addDoc, getDocs, setDoc, doc } from "firebase/firestore"
+import { auth, db } from "../Utility/firebase-config";
 import { PasswordGenerator } from "../Utility/PasswordGenerator";
 
 class Employee{
@@ -16,30 +16,23 @@ class Employee{
     this.dateOfBirth = dateOfBirth;
   }
 
-  create(){
+  async create(){
 
-    createUserWithEmailAndPassword(auth, this.email, 
+    const employeesCollectionRef = collection(db, "employees");
+
+    const result = await createUserWithEmailAndPassword(auth, this.email, 
       PasswordGenerator.getInstance().generatePassword(this.name, this.dateOfBirth));
 
-    // let employeesCollectionRef = collection(db, "employees");
-    // await addDoc(employeesCollectionRef, {
-    //   EmployeeName: name,
-    //   EmployeeEmail: email,
-    //   EmployeePhoneNumber: phoneNumber,
-    //   EmployeeGender: gender,
-    //   EmployeeDepartment: department,
-    //   EmployeeSalary: Number(salary),
-    //   EmployeeAddress: address,
-    //   EmployeeDateOfBirth: dateOfBirth
-    // });
-
-  }
-
-  read(){
-
-  }
-
-  update(){
+    await addDoc(employeesCollectionRef, {
+      EmployeeName: this.name,
+      EmployeeEmail: this.email,
+      EmployeePhoneNumber: this.phoneNumber,
+      EmployeeGender: this.gender,
+      EmployeeDepartment: this.department,
+      EmployeeSalary: this.salary,
+      EmployeeAddress: this.address,
+      EmployeeDateOfBirth: this.dateOfBirth,
+    });
 
   }
 

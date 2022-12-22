@@ -1,0 +1,17 @@
+@import url("../../View/global.css");
+
+.navbar-button p{
+  background-color: var(--primary-dark);
+}
+
+#line{
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-dark);
+  transition: all 100ms linear;
+}
+
+.navbar-button:hover #line{
+  background-color: var(--tertiary);
+}

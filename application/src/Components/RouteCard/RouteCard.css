@@ -1,0 +1,30 @@
+@import url("../../View/global.css");
+
+.route-card{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 900px;
+  background-color: var(--primary-dark);
+}
+
+.route-card p{
+  color: var(--tertiary);
+  background-color: var(--primary-dark);
+  font-size: 30px;
+  font-family: var(--main-font);
+  font-weight: bold;
+}
+
+.route-card .left{
+  margin-left: 100px;
+}
+
+.route-card .right{
+  margin-right: 100px;
+}
+
+.route-card:hover{
+  box-shadow: 0 0 1px 2px var(--tertiary);
+}

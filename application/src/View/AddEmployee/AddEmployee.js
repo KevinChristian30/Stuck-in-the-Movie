@@ -2,8 +2,9 @@ import "./AddEmployee.css";
 
 import { useState } from "react";
 
-import NavBar from "../NavBar/NavBar";
+import NavBar from "../../Components/NavBar/NavBar";
 import AddEmployeeController from "../../Controller/AddEmployeeController";
+import { useNavigate } from "react-router-dom";
 
 const AddEmployee = () => {
 
@@ -16,10 +17,15 @@ const AddEmployee = () => {
   const [address, setAddress] = useState('');
   const [dateOfBirth, setDateOfBirth] = useState('');
 
-  const handleAddEmployee = async (e) => {
+  const nav = useNavigate();
+
+  const handleAddEmployee = (e) => {
 
     e.preventDefault();
     AddEmployeeController.createEmployee(name, email, phoneNumber, gender, department, salary, address, dateOfBirth);
+    
+    alert('Employee Created!');
+    nav('/');
 
   }
 
@@ -31,7 +37,7 @@ const AddEmployee = () => {
         <form action="" id="add-employee-form" onSubmit={handleAddEmployee}>
           <h1 id="title">Add Employee</h1>
           <br />  
-          <div className="add-employee-input-container">
+          <div className="add-employee-input-container">    
             <label htmlFor="add-employee-name">Name</label>
             <input type="text" name="add-employee-name" id="add-employee-name" value={name} onChange={e => setName(e.target.value)} />
           </div>
@@ -56,7 +62,7 @@ const AddEmployee = () => {
             <select name="add-employee-department" id="add-employee-department" value={department} onChange={e => {setDepartment(e.target.value)}}>
               <option value="-">-</option>
               <option value="Manager">Manager</option>
-              <option value="Human">Human Resource</option>
+              <option value="Human Resource">Human Resource</option>
               <option value="Storage">Storage</option>
               <option value="Accounting and Finance">Accounting and Finance</option>
               <option value="External">External</option>

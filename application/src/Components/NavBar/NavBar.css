@@ -1,4 +1,4 @@
-@import url('../global.css');
+@import url('../../View/global.css');
 
 #navbar{
   display: flex;
@@ -44,4 +44,12 @@ a, .logout-button{
   font-weight: bold;
   font-family: (--main-font);
   font-size: 16px;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 100ms linear;
+}
+
+.logout-button:hover{
+  cursor: pointer;
+  background-color: var(--secondary);
 }

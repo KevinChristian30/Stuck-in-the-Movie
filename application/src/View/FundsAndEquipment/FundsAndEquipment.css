@@ -1,0 +1,11 @@
+.finance-and-equipment{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.card-container{
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}

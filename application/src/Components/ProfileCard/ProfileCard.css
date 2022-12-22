@@ -1,0 +1,12 @@
+@import url("../../View/global.css");
+
+.profile-card p{
+  font-family: var(--main-font);
+  color: var(--primary-dark);
+  background-color: var(--tertiary);
+  font-weight: bold;
+  width: 30%;
+  font-size: 20px;
+  border-radius: 1px;
+  padding: 10px;
+}
