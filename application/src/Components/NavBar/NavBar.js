@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { auth } from "../../Utility/firebase-config";
 import { useNavigate } from "react-router-dom";
 import NavBarButton from "../NavBarButton/NavBarButton";
+import { SessionSetter } from "../../Utility/SessionSetter";
 
 const NavBar = (props) => {
 
@@ -11,7 +12,7 @@ const NavBar = (props) => {
   const handleLogOut = () => {
 
     auth.signOut();
-    global.CurrentUser = null;
+    SessionSetter.getInstance().resetUserSession();
     nav('/login');
 
   }

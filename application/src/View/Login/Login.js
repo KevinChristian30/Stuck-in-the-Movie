@@ -5,6 +5,7 @@ import { auth, db } from "../../Utility/firebase-config";
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { useNavigate } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
+import { SessionSetter } from "../../Utility/SessionSetter";
 
 const Login = () => {
 
@@ -40,11 +41,22 @@ const Login = () => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
 
-      if (global.CurrentUser == null) global.CurrentUser = findEmployee();
+      if (!sessionStorage.getItem('EmployeeName')) 
+        SessionSetter.getInstance().setUserSession(findEmployee()); 
+
+      console.log(sessionStorage.getItem('EmployeeName'));
+      console.log(sessionStorage.getItem('EmployeeAddress'));      
+      console.log(sessionStorage.getItem('EmployeeDateOfBirth'));      
+      console.log(sessionStorage.getItem('EmployeeDepartment'));      
+      console.log(sessionStorage.getItem('EmployeeEmail'));
+      console.log(sessionStorage.getItem('EmployeeGender'));
+      console.log(sessionStorage.getItem('EmployeePhoneNumber'));
+      console.log(sessionStorage.getItem('EmployeeSalary'));
+      
       nav('/');
     
     }).catch((error) => {
-      global.CurrentUser = null;
+      SessionSetter.getInstance().resetUserSession();
       alert("Wrong Credentials");
     });
 
