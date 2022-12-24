@@ -1,0 +1,35 @@
+@import url("../../View/global.css");
+
+.working-time-card{
+  color: var(--tertiary);
+  font-family: var(--main-font);
+}
+
+.working-time-card .container{
+  background-color: var(--primary-dark);
+  padding: 20px;
+  width: 200px;
+  margin-left: 30px;
+  border: 2px solid var(--tertiary);
+  border-radius: 15px;
+}
+
+.working-time-card .container .line{
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--primary-dark);
+}
+
+.working-time-card .container .line p{
+  background-color: var(--primary-dark);
+}
+
+.working-time-card .container p{
+  background-color: var(--primary-dark);
+}
+
+#working-time-card-title{
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}

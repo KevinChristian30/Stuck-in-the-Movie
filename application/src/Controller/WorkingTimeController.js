@@ -9,6 +9,12 @@ class WorkingTimeController{
 
   }
 
+  static getWorkingTime(){
+
+    return WorkingTime.read();
+
+  }
+
 }
 
 export default WorkingTimeController;
