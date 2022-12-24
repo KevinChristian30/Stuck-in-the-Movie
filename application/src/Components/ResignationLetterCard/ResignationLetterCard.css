@@ -4,10 +4,9 @@
   display: flex;
   justify-content: space-between;
   background-color: var(--primary-dark);
-  width: 400px;
+  width: 800px;
   padding: 10px;
-  margin-left: 30px;
-  margin-top: 30px;
+  margin: 30px 30px 0 30px;
   font-family: var(--main-font);
   font-size: 20px;
   color: var(--tertiary);
@@ -15,8 +14,4 @@
 
 .resignation-letter-card a, .resignation-letter-card p{
   background-color: var(--primary-dark);
-}
-
-.resignation-letter-card .file-link{
-
 }
