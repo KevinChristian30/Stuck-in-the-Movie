@@ -15,7 +15,7 @@ const ResignationLetterView = () => {
   const [resignationLetters, setResignationLetters] = useState([]);
   const [resignationLettersCollection, setResignationLettersCollection] = useState([]);
 
-  const imageListRef = ref(storage, `resignation-letter/${global.CurrentUser.EmployeeEmail}` + '/');
+  const imageListRef = ref(storage, `resignation-letter/${sessionStorage.getItem('EmployeeEmail')}` + '/');
 
   let displayedLetter = {};
   const [itemsToURL, setItemsToURL] = useState({});
@@ -28,7 +28,7 @@ const ResignationLetterView = () => {
 
     const identifier = v4();
 
-    const fileRef = ref(storage, `resignation-letter/${global.CurrentUser.EmployeeEmail + '/' + identifier}`);
+    const fileRef = ref(storage, `resignation-letter/${sessionStorage.getItem('EmployeeEmail') + '/' + identifier}`);
     uploadBytes(fileRef, file).then((response) => {
 
       ResignationLetterController.createResignationLetter(identifier);
@@ -91,20 +91,21 @@ const ResignationLetterView = () => {
         <NavBar />
         <br /><br /><br /><br /><br />
           <Title title="My Resignation Letters"/>
+
+          {
+            resignationLetters.map((item) => {
+              if (!displayedLetter[item]){
+                displayedLetter[item] = true;
+                return <ResignationLetterCard key={item} status={ getStatus(item) } url={ itemsToURL[item.name] } count={c++}/>
+              }
+            })
+          }
+
           <form action="" className="file-input">
             <input type="file" onChange={ e => {setFile(e.target.files[0])} } />
             <button onClick={ uploadFile } id="submit-button">Submit Resignation Letter</button>
           </form>
       </div>
-
-      {
-        resignationLetters.map((item) => {
-          if (!displayedLetter[item]){
-            displayedLetter[item] = true;
-            return <ResignationLetterCard key={item} status={ getStatus(item) } url={ itemsToURL[item.name] } count={c++}/>
-          }
-        })
-      }
       
     </div>
 

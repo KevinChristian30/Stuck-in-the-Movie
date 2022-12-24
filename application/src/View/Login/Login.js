@@ -43,16 +43,6 @@ const Login = () => {
 
       if (!sessionStorage.getItem('EmployeeName')) 
         SessionSetter.getInstance().setUserSession(findEmployee()); 
-
-      console.log(sessionStorage.getItem('EmployeeName'));
-      console.log(sessionStorage.getItem('EmployeeAddress'));      
-      console.log(sessionStorage.getItem('EmployeeDateOfBirth'));      
-      console.log(sessionStorage.getItem('EmployeeDepartment'));      
-      console.log(sessionStorage.getItem('EmployeeEmail'));
-      console.log(sessionStorage.getItem('EmployeeGender'));
-      console.log(sessionStorage.getItem('EmployeePhoneNumber'));
-      console.log(sessionStorage.getItem('EmployeeSalary'));
-      
       nav('/');
     
     }).catch((error) => {

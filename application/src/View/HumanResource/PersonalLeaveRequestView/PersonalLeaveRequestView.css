@@ -1,0 +1,85 @@
+@import url("../../../View/global.css");
+
+.personal-leave-request-view{
+  color: var(--tertiary);
+  font-family: var(--main-font);
+}
+
+.personal-leave-request-view input{
+  color: var(--tertiary);
+  font-family: var(--main-font);
+  background-color: var(--primary-dark);
+  border: 2px solid var(--tertiary);
+  outline: none;
+}
+
+.personal-leave-request-view label,
+.personal-leave-request-view .line,
+.personal-leave-request-view b {
+  background-color: var(--primary-dark);
+}
+
+.personal-leave-request-view #leave-start-date::-webkit-calendar-picker-indicator,
+.personal-leave-request-view #leave-end-date::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.personal-leave-request-view #reason{
+  resize: none;
+  background-color: var(--primary-dark);
+  border: 2px solid var(--tertiary);
+  height: 200px;
+  width: 149px;
+  color: var(--tertiary);
+  outline: none;
+}
+
+.personal-leave-request-view form{
+  background-color: var(--primary-dark);
+  padding: 30px;
+  width: 300px;
+  border: 2px solid var(--tertiary);
+  border-radius: 20px;
+  margin-left: 30px;
+}
+
+.personal-leave-request-view .line{
+  display: flex;
+  justify-content: space-between;
+}
+
+.personal-leave-request-view #submit-button{
+  align-items: center;
+  background-color: var(--tertiary);
+  border-radius: 12px;
+  box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
+  box-sizing: border-box;
+  color: var(--primary-dark);
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-size: 1.2rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s,-webkit-box-shadow .2s;
+  border: 0;
+  margin-top: 30px;
+  width: 100%;
+  height: 30px;
+}
+
+.personal-leave-request-view #submit-button:hover {
+  box-shadow: 0 0 1px 1px var(--tertiary);
+}
+
+.personal-leave-request-view #personal-leave-card-title{
+  font-size: 20px;
+  display: block;
+  margin-bottom: 30px;
+}
