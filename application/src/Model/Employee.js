@@ -1,7 +1,9 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { collection, addDoc, getDocs, setDoc, doc } from "firebase/firestore"
+import WorkingTimeController from "../Controller/WorkingTimeController";
 import { auth, db } from "../Utility/firebase-config";
 import { PasswordGenerator } from "../Utility/PasswordGenerator";
+import WorkingTime from "./WorkingTime";
 
 class Employee{
 
@@ -14,13 +16,15 @@ class Employee{
     this.salary = Number(salary);
     this.address = address;
     this.dateOfBirth = dateOfBirth;
+    this.status = 'Active';
+    this.workingTime = new WorkingTime(this.email);
   }
 
   async create(){
 
     const employeesCollectionRef = collection(db, "employees");
 
-    const result = await createUserWithEmailAndPassword(auth, this.email, 
+    await createUserWithEmailAndPassword(auth, this.email, 
       PasswordGenerator.getInstance().generatePassword(this.name, this.dateOfBirth));
 
     await addDoc(employeesCollectionRef, {
@@ -32,7 +36,10 @@ class Employee{
       EmployeeSalary: this.salary,
       EmployeeAddress: this.address,
       EmployeeDateOfBirth: this.dateOfBirth,
+      EmployeeStatus: this.status
     });
+
+    WorkingTimeController.createWorkingTime(this.email);
 
   }
 

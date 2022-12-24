@@ -1,15 +1,19 @@
 @import url("../../../View/global.css");
 
-.file-input, .file-input input{
+.resignation-letter .file-input, 
+.resignation-letter .file-input input{
   background-color: var(--primary-dark);
 }
 
-.file-input{
+
+.resignation-letter .file-input{
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
   margin: 30px 30px 0 30px;
+  border-radius: 15px;
+  border: 2px solid var(--tertiary);
 }
 
 .resignation-letter .container #submit-button{
@@ -18,7 +22,7 @@
   color: var(--secondary);
   background-color: var(--tertiary);
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: none;
 }
 

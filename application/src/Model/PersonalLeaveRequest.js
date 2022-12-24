@@ -8,6 +8,7 @@ class PersonalLeaveRequest{
     this.leaveEndTime = leaveEndTime;
     this.reason = reason;
     this.email = sessionStorage.getItem('EmployeeEmail');
+    this.status = 'Pending';
   }
 
   async create(){
@@ -17,7 +18,8 @@ class PersonalLeaveRequest{
       leaveStartTime: this.leaveStartTime,
       leaveEndTime: this.leaveEndTime,
       reason: this.reason,
-      email: this.email
+      email: this.email,
+      status: this.status
     });
 
   }

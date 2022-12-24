@@ -38,6 +38,7 @@
   background-color: var(--primary-dark);
   padding: 30px;
   width: 300px;
+  height: 370px;
   border: 2px solid var(--tertiary);
   border-radius: 20px;
   margin-left: 30px;
@@ -82,4 +83,13 @@
   font-size: 20px;
   display: block;
   margin-bottom: 30px;
+}
+
+.personal-leave-request-view .content{
+  display: flex;
+  justify-content: space-between;
+}
+
+.personal-leave-request-view .personal-leave-right{
+  margin-right: 30px;
 }

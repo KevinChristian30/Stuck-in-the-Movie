@@ -1,0 +1,33 @@
+@import url("../../View/global.css");
+
+.personal-leave-request-card .container{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-dark);
+  padding: 10px;
+  border: 2px solid var(--tertiary);
+  border-radius: 20px;
+  width: 650px;
+  margin-bottom: 30px;
+}
+
+.personal-leave-request-card .container .compartment{
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--primary-dark);
+  margin: 0 0 2px 0;
+}
+
+.personal-leave-request-card .container .compartment p{
+  background-color: var(--primary-dark);
+}
+
+.personal-leave-request-card .container .compartmen #personal-leave-card{
+  display: inline;
+  flex-wrap: wrap;
+}
+
+.personal-leave-request-card #personal-leave-card-reason{
+  width: 500px;
+  text-align: right;
+}

@@ -12,13 +12,13 @@ const HumanResource = () => {
       <div className="card-container">
         <br /><br /><br /><br /><br />
         <Link to="/human-resource/resignation-letter">
-          <RouteCard className="card" title="My Resignation Letter Submission"/>
+          <RouteCard className="card" title="Resignation Letter"/>
         </Link>
         <Link to="/human-resource/personal-leave-request">
-          <RouteCard className="card" title="My Personal Leave Request"/>
+          <RouteCard className="card" title="Personal Leave"/>
         </Link>
         <Link to="/human-resource/working-time-request">
-          <RouteCard className="card" title="My Working Time Request"/>
+          <RouteCard className="card" title="Working Time"/>
         </Link>
       </div>
 

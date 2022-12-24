@@ -4,12 +4,14 @@
   display: flex;
   justify-content: space-between;
   background-color: var(--primary-dark);
-  width: 80%;
+  width: 1075px;
   padding: 10px;
   margin: 30px 30px 0 30px;
   font-family: var(--main-font);
   font-size: 20px;
   color: var(--tertiary);
+  border: 2px solid var(--tertiary);
+  border-radius: 15px;
 }
 
 .resignation-letter-card a, .resignation-letter-card p{

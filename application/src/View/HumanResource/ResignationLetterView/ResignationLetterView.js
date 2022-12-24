@@ -90,7 +90,7 @@ const ResignationLetterView = () => {
       <div className="container">
         <NavBar />
         <br /><br /><br /><br /><br />
-          <Title title="My Resignation Letters"/>
+          <Title title="Resignation Letter"/>
 
           {
             resignationLetters.map((item) => {
