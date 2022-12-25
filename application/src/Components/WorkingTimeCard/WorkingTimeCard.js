@@ -3,12 +3,13 @@ import "./WorkingTimeCard.css";
 const WorkingTimeCard = (props) => {
 
   const workingTime = props.workingTime;
+  const title = props.title;
 
   return ( 
     <div className="working-time-card">
 
       <div className="container">
-        <p id="working-time-card-title">My Working Time</p>
+        <p id="working-time-card-title">{title}</p>
         <div className="line">
           <p>Monday</p>
           <p>{workingTime.monday}</p>

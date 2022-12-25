@@ -1,0 +1,15 @@
+@import url("../../View/global.css");
+
+.card-with-text .card-with-text-container{
+  width: 200px;
+  padding: 20px;
+  height: 100px;
+  background-color: var(--primary-dark);
+  border: 2px solid var(--tertiary);
+  border-radius: 15px;
+}
+
+.card-with-text .card-with-text-container p{
+  background-color: var(--primary-dark);
+  color: var(--tertiary);
+}
