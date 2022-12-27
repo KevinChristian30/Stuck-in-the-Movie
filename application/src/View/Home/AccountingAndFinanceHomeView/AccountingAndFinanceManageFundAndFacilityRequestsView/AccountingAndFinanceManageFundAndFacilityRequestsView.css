@@ -1,0 +1,19 @@
+.accounting-and-finance-manager-fund-and-facility-request-container{
+  margin: 0 30px 0 30px;
+}
+
+.accounting-and-finance-manager-fund-and-facility-request-container h1{
+  font-family: var(--main-font);
+  color: var(--tertiary);
+  background-color: var(--primary-dark);
+  width: 500px;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px 0px var(--primary-light);
+}
+
+.accounting-and-finance-manager-fund-and-facility-request-container .action-container{
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}

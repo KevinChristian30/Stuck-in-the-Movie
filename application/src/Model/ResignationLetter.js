@@ -1,4 +1,4 @@
-import { addDoc, collection, getDocs } from "firebase/firestore";
+import { addDoc, collection, doc, getDocs, updateDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { db, storage } from "../Utility/firebase-config";
 import { v4 } from 'uuid';
@@ -33,6 +33,14 @@ class ResignationLetter{
     const resignationLetterCollectionRef = collection(db, "resignation-letters");
     const data = await getDocs(resignationLetterCollectionRef);
     return data;
+
+  }
+
+  static async updateStatus(id, status){
+
+    const toUpdate = { status: status };
+    const resignationLetterDoc = doc(db, 'resignation-letters', id);
+    await updateDoc(resignationLetterDoc, toUpdate);
 
   }
 

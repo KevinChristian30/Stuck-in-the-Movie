@@ -5,6 +5,7 @@ import AcceptButton from "../../../Components/Buttons/AcceptButton/AcceptButton"
 import LinkButton from "../../../Components/Buttons/LinkButton/LinkButton";
 import RejectButton from "../../../Components/Buttons/RejectButton/RejectButton";
 import Header from "../../../Components/Header/Header";
+import ResignationLetterController from "../../../Controller/ResignationLetterController";
 import { db } from "../../../Utility/firebase-config";
 import { tableStyle } from "../../TableStyle";
 import "./ManagerManageEmployeesResignationProposalsView.css";
@@ -30,25 +31,30 @@ const ManagerManageEmployeesResignationProposalsView = () => {
   
   }, []);
 
-  const handleAccept = () => {
-    console.log('Accept');
+  const handleAccept = (id) => {
+
+    ResignationLetterController.setResignationLetterStatus(id, 'Accepted');
+    alert('Letter Accepted');
+
   }
 
-  const handleReject = () => {
-    console.log('Reject');
+  const handleReject = (id) => {
+    
+    ResignationLetterController.setResignationLetterStatus(id, 'Rejected');
+    alert('Letter Rejected');
+
   }
 
   resignationLetters.map((item) => {
-    if (!displayedLetter[item.identifier]){
+    if (!displayedLetter[item.identifier] && item.status === 'Pending'){
       displayedLetter[item.identifier] = true;
       
       data.push({
         id: item.identifier,
-        status: item.status,
         action: <div className="action-container">
                   <LinkButton url={item.fileURL} />
-                  <AcceptButton onclick={handleAccept} />
-                  <RejectButton onclick={handleReject} />
+                  <AcceptButton onclick={ () => handleAccept(item.id) } />
+                  <RejectButton onclick={ () => handleReject(item.id) } />
                 </div> 
       });
 
@@ -60,11 +66,6 @@ const ManagerManageEmployeesResignationProposalsView = () => {
         name: 'Letter ID',
         selector: row => row.id,
         sortable: true,
-    },
-    {
-        name: 'Status',
-        selector: row => row.status,
-        sortable: true
     },
     {
       name: 'Action',

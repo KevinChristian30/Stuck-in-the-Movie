@@ -1,0 +1,12 @@
+.revise-button{
+  height: 20px;
+  width: 50px;
+  border-radius: 5px;
+  background-color: lightskyblue;
+  border: 2px solid lightskyblue;
+}
+
+.revise-button:hover{
+  color: lightskyblue;
+  background-color: var(--secondary);
+}

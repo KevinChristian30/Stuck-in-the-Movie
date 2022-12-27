@@ -15,6 +15,12 @@ class ResignationLetterController{
 
   }
 
+  static async setResignationLetterStatus(id, status){
+
+    ResignationLetter.updateStatus(id, status);
+
+  }
+
 }
 
 export default ResignationLetterController;

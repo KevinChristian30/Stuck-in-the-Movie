@@ -15,6 +15,8 @@ import BrokenFacilityReportView from './Report/BrokenFacilityReportView/BrokenFa
 import ManagerManageEmployeesView from './Manager/ManagerManageEmployeesView';
 import ManagerManageEmployeesWarningLetterProposalsView from './Manager/ManagerManageEmployeesWarningLetterProposalsView/ManagerManageEmployeesWarningLetterProposalsView';
 import ManagerManageEmployeesResignationProposalsView from './Manager/ManagerManageEmployeesResignationProposalsView/ManagerManageEmployeesResignationProposalsView';
+import ManagerManageViewEmployeesView from './Manager/ManagerManageViewEmployeesView/ManagerManageViewEmployeesView';
+import AccountingAndFinanceManageFundAndFacilityRequestsView from './Home/AccountingAndFinanceHomeView/AccountingAndFinanceManageFundAndFacilityRequestsView/AccountingAndFinanceManageFundAndFacilityRequestsView';
 
 function App() {
   return (
@@ -39,8 +41,13 @@ function App() {
           <Route exact path="/reports/broken-facility-report" element={<BrokenFacilityReportView />}></Route>
 
           <Route exact path="/manager/employees" element={<ManagerManageEmployeesView />}></Route>
-          <Route exact path="/manager/employees/warning-letter-proposals" element={<ManagerManageEmployeesWarningLetterProposalsView/>}></Route>
+          <Route exact path="/manager/employees/view-employees" element={<ManagerManageViewEmployeesView />}></Route>
           <Route exact path="/manager/employees/employee-resignation-proposals" element={<ManagerManageEmployeesResignationProposalsView />}></Route>
+          <Route exact path="/manager/employees/warning-letter-proposals" element={<ManagerManageEmployeesWarningLetterProposalsView/>}></Route>
+
+          <Route exact path="/accounting-and-finance/fund-and-facility-requests" element={<AccountingAndFinanceManageFundAndFacilityRequestsView />}></Route>
+
+          
 
         </Routes>
       </div> 

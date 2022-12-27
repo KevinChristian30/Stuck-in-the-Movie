@@ -14,6 +14,9 @@ const ManagerManageEmployeesView = () => {
       <div className="manager-home-view-container">
 
         <div className="card-container">
+          <Link to="/manager/employees/view-employees">
+            <RouteCard className="card" title="View Employees"/>
+          </Link>
           <Link to="/manager/employees/employee-resignation-proposals">
             <RouteCard className="card" title="Resignation Proposal"/>
           </Link>
