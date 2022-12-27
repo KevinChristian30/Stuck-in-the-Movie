@@ -5,6 +5,13 @@
   background-color: var(--primary-dark);
 }
 
+.resignation-letter .container{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 60px;
+}
+
 
 .resignation-letter .file-input{
   display: flex;
@@ -28,4 +35,8 @@
 
 .resignation-letter .container #submit-button:hover{
   box-shadow: 0 0 1px 1px var(--tertiary);
+}
+
+.view-link{
+  background: none;
 }

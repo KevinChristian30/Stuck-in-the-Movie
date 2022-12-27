@@ -1,4 +1,4 @@
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, getDocs } from "firebase/firestore";
 import { db } from "../Utility/firebase-config";
 
 class PersonalLeaveRequest{
@@ -21,6 +21,14 @@ class PersonalLeaveRequest{
       email: this.email,
       status: this.status
     });
+
+  }
+
+  static async read(){
+
+    const personalLeaveRequestCollectionRef = collection(db, 'personal-leave-requests');
+    const data = await getDocs(personalLeaveRequestCollectionRef);
+    return data;
 
   }
 

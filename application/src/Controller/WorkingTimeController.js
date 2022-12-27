@@ -9,7 +9,7 @@ class WorkingTimeController{
 
   }
 
-  static getWorkingTime(){
+  static getWorkingTimes(){
 
     return WorkingTime.read();
 

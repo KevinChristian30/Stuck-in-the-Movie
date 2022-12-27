@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import NavBar from "../../Components/NavBar/NavBar";
 import RouteCard from "../../Components/RouteCard/RouteCard";
-import "./FundsAndEquipment.css";
+import "./FundAndEquipment.css";
 
-const FundsAndEquipment = () => {
+const FundAndEquipment = () => {
   return ( 
 
     <div className="finance-and-equipment">
@@ -12,10 +12,10 @@ const FundsAndEquipment = () => {
 
       <div className="card-container">
         <br /><br /><br /><br /><br />
-        <Link to="/finance-and-equipment/fund-requests">
+        <Link to="/fund-and-equipment/fund-request">
           <RouteCard className="card" title="My Fund Requests"/>
         </Link>
-        <Link to="/finance-and-equipment/equipment-requests">
+        <Link to="/fund-and-equipment/equipment-request">
           <RouteCard className="card" title="My Equipment Requests"/>
         </Link>
       </div>
@@ -25,4 +25,4 @@ const FundsAndEquipment = () => {
    );
 }
  
-export default FundsAndEquipment;
+export default FundAndEquipment;

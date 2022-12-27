@@ -4,6 +4,7 @@ import NavBar from "../../../Components/NavBar/NavBar";
 import Title from "../../../Components/Title/Title";
 import WorkingTimeCard from "../../../Components/WorkingTimeCard/WorkingTimeCard";
 import WorkingTimeController from "../../../Controller/WorkingTimeController";
+import WorkingTimeRequestController from "../../../Controller/WorkingTimeRequestController";
 import "./WorkingTimeRequestView.css"
 
 const WorkingTimeRequestView = () => {
@@ -12,6 +13,7 @@ const WorkingTimeRequestView = () => {
   const [workingTime, setWorkingTime] = useState({});
 
   const [workingTimeRequests, setWorkingTimeRequests] = useState([]);
+  const [workingTimeRequest, setWorkingTimeRequest] = useState(null);
 
   const [monday, setMonday] = useState('Morning');
   const [tuesday, setTuesday] = useState('Morning');
@@ -21,42 +23,57 @@ const WorkingTimeRequestView = () => {
   const [saturday, setSaturday] = useState('Morning');
   const [sunday, setSunday] = useState('Morning');
 
-  // useEffect(() => {
+  useEffect(() => {
 
-  //   const getWorkingTimeData = async () => {
+    const getWorkingTimeData = async () => {
 
-  //     const data = await WorkingTimeController.getWorkingTime();
-  //     setWorkingTimes(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
+      const data = await WorkingTimeController.getWorkingTimes();
+      setWorkingTimes(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
 
-  //   }
+    }
 
-  //   getWorkingTimeData();
+    getWorkingTimeData();
 
-  //   for (let i = 0; i < workingTimes.length; i++){
-  //     if (workingTimes[i].email === sessionStorage.getItem('EmployeeEmail')){
-  //       setWorkingTime(workingTimes[i]);
-  //     }
-  //   }
+    const getWorkingTimeRequestsData = async () => {
 
-  // });
+      const data = await WorkingTimeRequestController.getWorkingTimeRequests();
+      setWorkingTimeRequests(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
+
+    }
+
+    getWorkingTimeRequestsData();
+
+    for (let i = 0; i < workingTimes.length; i++){
+      if (workingTimes[i].email === sessionStorage.getItem('EmployeeEmail')){
+        setWorkingTime(workingTimes[i]);
+      }
+    }
+
+    for (let i = 0; i < workingTimeRequests.length; i++){
+      if (workingTimeRequests[i].requesterEmail === sessionStorage.getItem('EmployeeEmail')){
+        setWorkingTimeRequest(workingTimeRequests[i]);
+      }
+    }
+
+  });
 
   const handleRequestWorkingTime = (e) => {
 
     e.preventDefault();
-    console.log(monday);
-    console.log(tuesday);
-    console.log(wednesday);
-    console.log(thursday);
-    console.log(friday);
-    console.log(saturday);
-    console.log(sunday);
 
+    if (workingTimeRequest === null){
+      WorkingTimeRequestController.createWorkingTimeRequest(monday, tuesday, wednesday, thursday, friday, saturday, sunday);
+      alert('Working Time Request Created');
+    } else {
+      alert('You Already Have a Working Time Request');
+    }
+    
   }
 
   const getWorkingTimeRequest = () => {
 
-    if (workingTimeRequests.length > 0){
-      return <WorkingTimeCard workingTime={workingTimeRequests} title="My Working Time Request" />
+    if (workingTimeRequest !== null){
+      return <WorkingTimeCard workingTime={workingTimeRequest} title="My Working Time Request" />
     } else {
       return (
       <div id="no-working-time-request">
@@ -75,7 +92,6 @@ const WorkingTimeRequestView = () => {
       <div className="working-time-request-view-container">
         <WorkingTimeCard id="current-working-time" workingTime={workingTime} title="My Working Time" />
 
-        
         { getWorkingTimeRequest() }
 
         <form action="" id="working-time-request-form" onSubmit={handleRequestWorkingTime}>

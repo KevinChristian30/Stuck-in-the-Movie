@@ -10,6 +10,12 @@ class WorkingTimeRequestController{
 
   }
 
+  static getWorkingTimeRequests(){
+
+    return WorkingTimeRequest.read();
+
+  }
+
 }
 
 export default WorkingTimeRequestController;

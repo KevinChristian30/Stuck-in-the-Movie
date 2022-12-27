@@ -6,6 +6,7 @@ class ResignationLetter{
   constructor(identifier){
     this.identifier = identifier;
     this.status = 'Pending';
+    this.requesterEmail = sessionStorage.getItem('EmployeeEmail');
   }
 
   async create(){
@@ -14,7 +15,8 @@ class ResignationLetter{
 
     await addDoc(resignationLetterCollectionRef, {
       ResignationLetterIdentifier: this.identifier,
-      ResignationLetterStatus: this.status
+      ResignationLetterStatus: this.status,
+      RequesterEmail: this.requesterEmail
     });
     
   }

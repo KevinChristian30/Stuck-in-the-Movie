@@ -9,6 +9,12 @@ class PersonalLeaveRequestController{
 
   }
 
+  static getPersonalLeaveRequests(){
+
+    return PersonalLeaveRequest.read();
+
+  }
+
 }
 
 export default PersonalLeaveRequestController;

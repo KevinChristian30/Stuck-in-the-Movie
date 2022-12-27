@@ -87,9 +87,10 @@
 
 .personal-leave-request-view .content{
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 
 .personal-leave-request-view .personal-leave-right{
-  margin-right: 30px;
+  margin: 0 30px 30px 30px;
 }

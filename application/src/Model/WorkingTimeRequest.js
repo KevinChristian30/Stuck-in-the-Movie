@@ -1,4 +1,4 @@
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, getDocs } from "firebase/firestore";
 import { db } from "../Utility/firebase-config";
 
 class WorkingTimeRequest{
@@ -29,6 +29,14 @@ class WorkingTimeRequest{
       sunday: this.sunday,
       status: this.status
     });
+
+  }
+
+  static async read(){
+
+    const workingTimeRequestsCollectionRef = collection(db, "working-time-requests");
+    const data = await getDocs(workingTimeRequestsCollectionRef);
+    return data;
 
   }
 

@@ -1,0 +1,29 @@
+@import url("../../View/global.css");
+
+.fund-request-card{
+  background-color: var(--primary-dark);
+  padding: 10px;
+  border-radius: 15px; 
+  border: 2px solid var(--tertiary); 
+  margin-bottom: 30px;
+  color: var(--tertiary);
+  font-family: var(--main-font);
+  width: 500px;
+}
+
+.fund-request-card .fund-request-card-container,
+.fund-request-card .fund-request-card-container p{
+  background-color: var(--primary-dark);
+}
+
+.fund-request-card .fund-request-card-container .line{
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--primary-dark);
+  margin: 3px 0 3px 0;
+}
+
+.fund-request-card .fund-request-card-container .line p:nth-child(2){
+  width: 300px;
+  text-align: right;
+}

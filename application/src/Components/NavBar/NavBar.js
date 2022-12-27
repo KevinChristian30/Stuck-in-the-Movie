@@ -27,8 +27,8 @@ const NavBar = (props) => {
           <Link to='/human-resource'>
             <NavBarButton label="Human Resource" />
           </Link>
-          <Link to='/funds-and-equipments'>
-            <NavBarButton label="Funds and Equipments" />
+          <Link to='/fund-and-equipment'>
+            <NavBarButton label="Fund and Equipment" />
           </Link>
           <Link to='/reports'>
             <NavBarButton label="Reports" />

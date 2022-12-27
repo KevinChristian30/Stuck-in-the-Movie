@@ -5,6 +5,20 @@ const WorkingTimeCard = (props) => {
   const workingTime = props.workingTime;
   const title = props.title;
 
+  const getStatus = () => {
+
+    if (!workingTime.status) return;
+    if (workingTime.status !== null) {
+      return (
+        <div style={{marginTop: "10px", fontWeight: "bold"}} className="line">
+          <p>Status</p>
+          <p>{workingTime.status}</p>
+        </div>
+      )
+    }
+
+  }
+
   return ( 
     <div className="working-time-card">
 
@@ -38,6 +52,7 @@ const WorkingTimeCard = (props) => {
           <p>Sunday</p>
           <p>{workingTime.sunday}</p>
         </div>
+        { getStatus() }
       </div>
       
     </div>

@@ -1,0 +1,9 @@
+@import url("../../View/global.css");
+
+.expanded p{
+  color: var(--tertiary);
+  font-family: var(--main-font);
+  font-weight: bold;
+  padding: 10px 0 10px 30px;
+  background-color: var(--primary-dark);
+}
