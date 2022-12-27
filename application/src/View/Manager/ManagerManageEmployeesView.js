@@ -10,7 +10,7 @@ const ManagerManageEmployeesView = () => {
       <NavBar />
       <br /><br /><br /><br /><br />
       <Title title="Manage Employees"/>
-
+      <br />
       <div className="manager-home-view-container">
 
         <div className="card-container">

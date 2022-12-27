@@ -39,6 +39,7 @@ class Employee{
       EmployeeStatus: this.status
     });
 
+    console.log(this.email);
     WorkingTimeController.createWorkingTime(this.email);
 
   }

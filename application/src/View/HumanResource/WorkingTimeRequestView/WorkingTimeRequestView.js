@@ -28,7 +28,14 @@ const WorkingTimeRequestView = () => {
     const getWorkingTimeData = async () => {
 
       const data = await WorkingTimeController.getWorkingTimes();
-      setWorkingTimes(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
+      const temp = data.docs.map((doc) => ({...doc.data(), id: doc.id}))
+      setWorkingTimes(temp);
+
+      for (let i = 0; i < temp.length; i++){
+        if (temp[i].email === sessionStorage.getItem('EmployeeEmail')){
+          setWorkingTime(temp[i]);
+        }
+      }
 
     }
 
@@ -38,24 +45,19 @@ const WorkingTimeRequestView = () => {
 
       const data = await WorkingTimeRequestController.getWorkingTimeRequests();
       setWorkingTimeRequests(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
+      const temp = data.docs.map((doc) => ({...doc.data(), id: doc.id}));
+
+      for (let i = 0; i < temp.length; i++){
+        if (temp[i].requesterEmail === sessionStorage.getItem('EmployeeEmail')){
+          setWorkingTimeRequest(temp[i]);
+        }
+      }
 
     }
 
     getWorkingTimeRequestsData();
 
-    for (let i = 0; i < workingTimes.length; i++){
-      if (workingTimes[i].email === sessionStorage.getItem('EmployeeEmail')){
-        setWorkingTime(workingTimes[i]);
-      }
-    }
-
-    for (let i = 0; i < workingTimeRequests.length; i++){
-      if (workingTimeRequests[i].requesterEmail === sessionStorage.getItem('EmployeeEmail')){
-        setWorkingTimeRequest(workingTimeRequests[i]);
-      }
-    }
-
-  });
+  }, []);
 
   const handleRequestWorkingTime = (e) => {
 
@@ -67,7 +69,7 @@ const WorkingTimeRequestView = () => {
     } else {
       alert('You Already Have a Working Time Request');
     }
-    
+     
   }
 
   const getWorkingTimeRequest = () => {

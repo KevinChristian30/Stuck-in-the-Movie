@@ -1,70 +1,59 @@
 import { collection, getDocs } from "firebase/firestore";
-import { getDownloadURL, listAll, ref } from "firebase/storage";
 import { useEffect, useState } from "react";
 import DataTable, { createTheme } from "react-data-table-component";
+import AcceptButton from "../../../Components/Buttons/AcceptButton/AcceptButton";
+import LinkButton from "../../../Components/Buttons/LinkButton/LinkButton";
+import RejectButton from "../../../Components/Buttons/RejectButton/RejectButton";
 import Header from "../../../Components/Header/Header";
-import { db, storage } from "../../../Utility/firebase-config";
+import { db } from "../../../Utility/firebase-config";
 import { tableStyle } from "../../TableStyle";
 import "./ManagerManageEmployeesResignationProposalsView.css";
 
 const ManagerManageEmployeesResignationProposalsView = () => {
 
   const [resignationLetters, setResignationLetters] = useState([]);
-  const [resignationLettersCollection, setResignationLettersCollection] = useState([]);
 
   let displayedLetter = {};
-  const [itemsToURL, setItemsToURL] = useState({});
-
   let data = [];
 
   useEffect(() => {
 
-    const getResignationLettersCollection = async () => {
+    const getResignationLetters = async () => {
 
-      const resignationLettersCollectionRef = collection(db, 'resignation-letters');
-      const data = await getDocs(resignationLettersCollectionRef);
-      const temp = data.docs.map(doc => ({...doc.data(), id: doc.id}));
-      setResignationLettersCollection(temp);
+      const resignationLettersRef = collection(db, 'resignation-letters');
+      const data = await getDocs(resignationLettersRef);
+      setResignationLetters(data.docs.map(doc => ({...doc.data(), id: doc.id})));
 
-      temp.map(resignationLetter => {
-      
-        const imageListRef = ref(storage, `resignation-letter/${resignationLetter.RequesterEmail}` + '/');
-        listAll(imageListRef).then(response => {
-    
-          response.items.forEach((item) => {
-            
-            setResignationLetters(prev => [...prev, item]);
-            
-            getDownloadURL(item).then(url => {
-      
-              const newItem = {};
-              newItem[item.name] = url;
-      
-              setItemsToURL(itemsToURL => ({
-                ...itemsToURL,
-                ...newItem
-              }))
+    }
 
-            });
-          });
-  
-        });
-      });
-  
-    } 
-    
-    getResignationLettersCollection();
+    getResignationLetters();
   
   }, []);
 
-  const getStatus = (item) => {
-
-    for (let i = 0; i < resignationLettersCollection.length; i++){
-      if (item.name == resignationLettersCollection[i].ResignationLetterIdentifier) 
-      return resignationLettersCollection[i].ResignationLetterStatus;
-    }
-  
+  const handleAccept = () => {
+    console.log('Accept');
   }
+
+  const handleReject = () => {
+    console.log('Reject');
+  }
+
+  resignationLetters.map((item) => {
+    if (!displayedLetter[item.identifier]){
+      displayedLetter[item.identifier] = true;
+      
+      data.push({
+        id: item.identifier,
+        status: item.status,
+        action: <div className="action-container">
+                  <LinkButton url={item.fileURL} />
+                  <AcceptButton onclick={handleAccept} />
+                  <RejectButton onclick={handleReject} />
+                </div> 
+      });
+
+    }
+  })
 
   const columns = [
     {
@@ -75,27 +64,14 @@ const ManagerManageEmployeesResignationProposalsView = () => {
     {
         name: 'Status',
         selector: row => row.status,
-        sortable: true,
+        sortable: true
     },
     {
       name: 'Action',
       selector: row => row.action,
-      sortable: true,
+      sortable: true
     },
   ];
-  
-  resignationLetters.map((item) => {
-    if (!displayedLetter[item]){
-      displayedLetter[item] = true;
-
-      data.push({
-        id: item.name,
-        status: getStatus(item),
-        action: <a className="view-link" href={itemsToURL[item.name]} target="_blank">View</a>
-      });
-  
-    }
-  })
 
   createTheme('tableTheme', {
     text: {

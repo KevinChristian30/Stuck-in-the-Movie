@@ -1,0 +1,12 @@
+.accept-button{
+  height: 20px;
+  width: 50px;
+  border-radius: 5px;
+  background-color: greenyellow;
+  border: 2px solid greenyellow;
+}
+
+.accept-button:hover{
+  color: greenyellow;
+  background-color: var(--secondary);
+}

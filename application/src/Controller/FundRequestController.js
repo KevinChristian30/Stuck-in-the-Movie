@@ -9,9 +9,9 @@ class FundRequestController{
 
   }
 
-  static getFundRequests(){
+  static async getFundRequests(){
 
-    return FundRequest.read();
+    return await FundRequest.read();
 
   }
   

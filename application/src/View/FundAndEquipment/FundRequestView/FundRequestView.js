@@ -28,14 +28,30 @@ const FundRequestView = () => {
 
     const getFundRequest = async () => {
       
-      const data = await FundRequestController.getFundRequests();
-      setFundRequests(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
-    
+      const databaseData = await FundRequestController.getFundRequests();
+      const temp = databaseData.docs.map((doc) => ({...doc.data(), id: doc.id}))
+      setFundRequests(temp);
+
     }
     
     getFundRequest();
 
   }, []);
+
+  fundRequests.map(e => {
+
+    if (e.requesterEmail === sessionStorage.getItem('EmployeeEmail')){
+
+      data.push({
+        id: e.id,
+        amountOfMoney: e.amountOfMoney,
+        reason: e.reason,
+        status: e.status
+      });    
+
+    }
+
+  });
 
   const columns = [
     {
@@ -60,21 +76,6 @@ const FundRequestView = () => {
     }
   ];
 
-  fundRequests.map(e => {
-
-    if (e.requesterEmail === sessionStorage.getItem('EmployeeEmail')){
-
-      data.push({
-        id: e.id,
-        amountOfMoney: e.amountOfMoney,
-        reason: e.reason,
-        status: e.status
-      });
-
-    }
-
-  });
-
   const expand = (reason) => {
     
     return( 
@@ -95,7 +96,7 @@ const FundRequestView = () => {
       text: '#FFFFFF',
     },
     divider: {
-      default: '#F5F5F1',
+      default: '#F5F5F1',   
     },
   }, 'dark');
 
