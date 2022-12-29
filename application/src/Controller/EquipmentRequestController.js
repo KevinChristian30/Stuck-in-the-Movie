@@ -14,6 +14,18 @@ class EquipmentRequestController{
     return EquipmentRequest.read();
 
   }
+
+  static setEquipmentRequestStatus(id, status){
+
+    EquipmentRequest.updateStatus(id, status);
+
+  }
+
+  static reviseFacilityRequest(id, revisionReason){
+
+    EquipmentRequest.revise(id, revisionReason);
+
+  }
   
 }
 

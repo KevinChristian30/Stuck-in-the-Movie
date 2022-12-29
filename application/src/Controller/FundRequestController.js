@@ -14,6 +14,18 @@ class FundRequestController{
     return await FundRequest.read();
 
   }
+
+  static setFundRequestStatus(id, status){
+
+    FundRequest.updateStatus(id, status);
+
+  }
+
+  static reviseFundRequst(id, reviseReason){
+
+    FundRequest.revise(id, reviseReason);
+
+  }
   
 }
 

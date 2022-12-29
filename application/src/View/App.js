@@ -16,7 +16,7 @@ import ManagerManageEmployeesView from './Manager/ManagerManageEmployeesView';
 import ManagerManageEmployeesWarningLetterProposalsView from './Manager/ManagerManageEmployeesWarningLetterProposalsView/ManagerManageEmployeesWarningLetterProposalsView';
 import ManagerManageEmployeesResignationProposalsView from './Manager/ManagerManageEmployeesResignationProposalsView/ManagerManageEmployeesResignationProposalsView';
 import ManagerManageViewEmployeesView from './Manager/ManagerManageViewEmployeesView/ManagerManageViewEmployeesView';
-import AccountingAndFinanceManageFundAndFacilityRequestsView from './Home/AccountingAndFinanceHomeView/AccountingAndFinanceManageFundAndFacilityRequestsView/AccountingAndFinanceManageFundAndFacilityRequestsView';
+import AccountingAndFinanceManageFundAndFacilityRequestsView from './AccountingAndFinance/AccountingAndFinanceManageFundAndFacilityRequestsView/AccountingAndFinanceManageFundAndFacilityRequestsView';
 
 function App() {
   return (
@@ -46,8 +46,6 @@ function App() {
           <Route exact path="/manager/employees/warning-letter-proposals" element={<ManagerManageEmployeesWarningLetterProposalsView/>}></Route>
 
           <Route exact path="/accounting-and-finance/fund-and-facility-requests" element={<AccountingAndFinanceManageFundAndFacilityRequestsView />}></Route>
-
-          
 
         </Routes>
       </div> 

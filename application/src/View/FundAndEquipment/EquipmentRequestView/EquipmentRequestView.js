@@ -61,16 +61,25 @@ const EquipmentRequestView = () => {
       data.push({
         id: e.id,
         request: e.request,
-        status: e.status
+        status: e.status,
+        revisionReason: e.revisionReason
       });
     }
 
   });
 
-  const expand = (request) => {
+  const expand = (data) => {
+
+    const getReviseReason = () => {
+      if (data.status === 'Revised') 
+        return <Expanded text={'Revision Reason: ' + data.revisionReason} />
+    }
 
     return( 
-      <Expanded text={'Request: ' + request} />
+      <div className="container">
+        <Expanded text={'Reason: ' + data.request} />
+        { getReviseReason() }
+      </div>
     )
 
   }
@@ -108,7 +117,7 @@ const EquipmentRequestView = () => {
         </form>
         <div className="equipment-request-view-right">
 
-          <DataTable columns={columns} data={data} customStyles={tableStyle} expandableRows expandableRowsComponent={(row) => { return expand(row.data.request) }} theme={'tableTheme'} />
+          <DataTable columns={columns} data={data} customStyles={tableStyle} expandableRows expandableRowsComponent={(row) => { return expand(row.data) }} theme={'tableTheme'} />
 
       </div>
       </div>

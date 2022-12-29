@@ -46,7 +46,8 @@ const FundRequestView = () => {
         id: e.id,
         amountOfMoney: e.amountOfMoney,
         reason: e.reason,
-        status: e.status
+        status: e.status,
+        revisionReason: e.revisionReason
       });    
 
     }
@@ -76,10 +77,18 @@ const FundRequestView = () => {
     }
   ];
 
-  const expand = (reason) => {
+  const expand = (data) => {
+
+    const getReviseReason = () => {
+      if (data.status === 'Revised') 
+        return <Expanded text={'Revision Reason: ' + data.revisionReason} />
+    }
     
     return( 
-      <Expanded text={'Reason: ' + reason} />
+      <div className="container">
+        <Expanded text={'Reason: ' + data.reason} />
+        { getReviseReason() }
+      </div>
     )
 
   }
@@ -122,7 +131,7 @@ const FundRequestView = () => {
         <div className="fund-request-view-right">
           <DataTable columns={columns} data={data} theme={'tableTheme'} customStyles={tableStyle} expandableRows expandableRowsComponent={
             (row) => {
-              return expand(row.data.reason) 
+              return expand(row.data) 
             }
           } />
         </div>

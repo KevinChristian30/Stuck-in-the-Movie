@@ -1,5 +1,5 @@
 import { db } from "../Utility/firebase-config";
-import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
+import { addDoc, collection, doc, getDocs, query, updateDoc, where } from "firebase/firestore";
 
 class FundRequest{
 
@@ -29,6 +29,22 @@ class FundRequest{
     const fundRequestsCollectionRef = collection(db, 'fund-requests');
     const data = await getDocs(fundRequestsCollectionRef);
     return data;
+
+  }
+
+  static async updateStatus(id, status){
+
+    const toUpdate = {status: status};
+    const fundRequestDoc = doc(db, 'fund-requests', id);
+    await updateDoc(fundRequestDoc, toUpdate);
+
+  }
+
+  static async revise(id, reviseReason){
+
+    const toUpdate = {status: 'Revised', revisionReason: reviseReason};
+    const fundRequestDoc = doc(db, 'fund-requests', id);
+    await updateDoc(fundRequestDoc, toUpdate);
 
   }
 
