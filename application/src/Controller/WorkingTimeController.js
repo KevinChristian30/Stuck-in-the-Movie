@@ -15,6 +15,12 @@ class WorkingTimeController{
 
   }
 
+  static updateWorkingTime(id, monday, tuesday, wednesday, thursday, friday, saturday, sunday){
+
+    WorkingTime.updateWorkingTime(id, monday, tuesday, wednesday, thursday, friday, saturday, sunday);
+
+  }
+
 }
 
 export default WorkingTimeController;

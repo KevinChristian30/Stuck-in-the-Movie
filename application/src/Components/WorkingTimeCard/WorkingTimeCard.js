@@ -52,7 +52,7 @@ const WorkingTimeCard = (props) => {
           <p>Sunday</p>
           <p>{workingTime.sunday}</p>
         </div>
-        { getStatus() }
+        {/* { getStatus() } */}
       </div>
       
     </div>

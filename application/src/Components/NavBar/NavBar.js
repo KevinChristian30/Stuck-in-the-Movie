@@ -4,6 +4,7 @@ import { auth } from "../../Utility/firebase-config";
 import { useNavigate } from "react-router-dom";
 import NavBarButton from "../NavBarButton/NavBarButton";
 import { SessionSetter } from "../../Utility/SessionSetter";
+import { sendPasswordResetEmail } from "firebase/auth";
 
 const NavBar = (props) => {
 
@@ -14,6 +15,13 @@ const NavBar = (props) => {
     auth.signOut();
     SessionSetter.getInstance().resetUserSession();
     nav('/login');
+
+  }
+
+  const handleResetPassword = () => {
+
+    sendPasswordResetEmail(auth, sessionStorage.getItem('EmployeeEmail'));
+    alert('Password Reset Email Submitted')
 
   }
 
@@ -36,6 +44,7 @@ const NavBar = (props) => {
 
         </div>
         <div className="right">
+          <button className="logout-button" onClick={ handleResetPassword }>Reset Password</button>
           <button className="logout-button" onClick={ handleLogOut }>Log Out</button>
         </div>
       </div>

@@ -2,7 +2,7 @@ import "./Login.css";
 
 import { useEffect, useState } from "react";
 import { auth, db } from "../../Utility/firebase-config";
-import { signInWithEmailAndPassword } from "firebase/auth"
+import { sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth"
 import { useNavigate } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { SessionSetter } from "../../Utility/SessionSetter";
@@ -52,6 +52,13 @@ const Login = () => {
 
   }
 
+  const handleResetPassword = () => {
+
+    sendPasswordResetEmail(auth, sessionStorage.getItem('EmployeeEmail'));
+    alert('Password Reset Email Submitted')
+
+  }
+
   return ( 
 
     <div id="login">
@@ -68,7 +75,11 @@ const Login = () => {
             <label className="login-form-label" htmlFor="login-password">Password</label>
             <input className="login-input" type="password" name="login-password" id="login-password" value={password} onChange={e=> setPassword(e.target.value)} />
           </div>
-          <button id="login-button">Login</button>
+          <div className="button-container">
+            <button id="login-button">Login</button>
+            <button id="login-button" type="button" onClick={handleResetPassword}>Reset Password</button>
+          </div>
+          
         </form>
       </div>
     </div>

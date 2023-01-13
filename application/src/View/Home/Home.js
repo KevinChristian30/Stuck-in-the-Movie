@@ -5,6 +5,8 @@ import ExternalHomeView from "./ExternalHomeView/ExternalHomeView";
 import HRHomeView from "./HRHomeView/HRHomeView";
 import "./Home.css"
 import ManagerHomeView from "./ManagerHomeView/ManagerHomeView";
+import MovieFrontOfficeHomeView from "./MovieFrontOfficeHomeView/MovieFrontOfficeHomeView";
+import StorageHomeView from "./Storage/StorageHomeView";
 
 const Home = () => {
 
@@ -18,6 +20,10 @@ const Home = () => {
       return <HRHomeView />
     else if (sessionStorage.getItem('EmployeeDepartment') === 'External')
       return <ExternalHomeView />
+    else if (sessionStorage.getItem('EmployeeDepartment') === 'Storage')
+      return <StorageHomeView />
+    else if (sessionStorage.getItem('EmployeeDepartment') === 'Movie - Front Office')
+      return <MovieFrontOfficeHomeView />
 
   }
 

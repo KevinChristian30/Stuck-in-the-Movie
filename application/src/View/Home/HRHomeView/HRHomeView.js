@@ -22,6 +22,9 @@ const HRHomeView = () => {
         <Link to="/hr/terminiation-letter-proposals">
           <RouteCard className="card" title="Propose Termination Letter"/>
         </Link>
+        <Link to="/hr/update-working-time">
+          <RouteCard className="card" title="Update Working Time"/>
+        </Link>
         <br /><br /><br /><br />
       </div>
 

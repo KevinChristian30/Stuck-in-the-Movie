@@ -1,0 +1,14 @@
+@import url("../../../View/global.css");
+
+.storage-manage-add-facilitiy-view .container #add-employee-form #title,
+.storage-manage-add-facilitiy-view .container #add-employee-form .add-employee-input-container label{
+  font-family: var(--main-font);
+  color: var(--tertiary);
+}
+
+.storage-manage-add-facilitiy-view .container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -150px;
+}

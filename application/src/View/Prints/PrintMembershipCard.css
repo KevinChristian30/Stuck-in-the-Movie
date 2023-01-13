@@ -1,0 +1,10 @@
+.print-membership-card .container{
+  display: flex;
+  justify-content: space-around;
+}
+
+.print-membership-card .container .text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

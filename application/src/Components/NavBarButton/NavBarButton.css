@@ -2,6 +2,7 @@
 
 .navbar-button p{
   background-color: var(--primary-dark);
+  color: var(--tertiary);
 }
 
 #line{

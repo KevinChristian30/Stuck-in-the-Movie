@@ -1,0 +1,75 @@
+@import url("../../../View/global.css");
+
+.working-time-request-view{
+  font-family: var(--main-font);
+}
+
+.working-time-request-view #working-time-request-form .line{
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--primary-dark);
+}
+
+.working-time-request-view #working-time-request-form{
+  margin-left: 30px;
+  background-color: var(--primary-dark);
+  padding: 20px;
+  width: 200px;
+  border: 2px solid var(--tertiary);
+  border-radius: 15px;
+  color: var(--tertiary);
+}
+
+.working-time-request-view #working-time-request-form .line select {
+  color: var(--tertiary);
+  background-color: var(--primary-dark);
+  border: 2px solid var(--tertiary);
+}
+
+.working-time-request-view #working-time-request-form .line p{
+  background-color: var(--primary-dark);
+}
+
+.working-time-request-view #working-time-request-form #working-time-request-form-title{
+  background-color: var(--primary-dark);
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.working-time-request-view .working-time-request-view-container{
+  display: flex;
+}
+
+#working-time-request-view-button{
+  align-items: center;
+  background-color: var(--tertiary);
+  border-radius: 12px;
+  box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
+  box-sizing: border-box;
+  color: var(--primary-dark);
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-size: 1.2rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s,-webkit-box-shadow .2s;
+  border: 0;
+  margin-top: 30px;
+  width: 100%;
+  height: 20px;
+}
+
+#working-time-request-view-button:hover {
+  box-shadow: 0 0 1px 1px var(--tertiary);
+}
+
+#no-working-time-request{
+  margin-left: 30px;
+}

@@ -24,6 +24,13 @@ import HRManageWarningLetterProposalsView from './HR/HRManageWarningLetterPropos
 import HRManageTerminationLetterProposalsView from './HR/HRManageTerminationLetterProposalsView/HRManageTerminationLetterProposalsView';
 import ManagerManageEmployeesTerminationLetterProposalsView from './Manager/ManagerManageEmployeesTerminationLetterProposalsView/ManagerManageEmployeesTerminationLetterProposalsView';
 import ExternalManageAddPartnerView from './External/ExternalManageAddPartnerView/ExternalManageAddPartnerView';
+import StorageManageAddFacilityView from './Storage/StorageManageAddFacilityView/StorageManageAddFacilityView';
+import PrintFacility from './Prints/PrintFacility';
+import StorageManageFacilitiesToPurchase from './Storage/StorageManageFacilitiesToPurchase/StorageManageFacilitiesToPurchase';
+import ExternalManageRecordExternalInformation from './External/ExternalManageRecordExternalInformation/ExternalManageRecordExternalInformation';
+import HRUpdateEmployeeWorkingTimeView from './HR/HRUpdateEmployeeWorkingTimeView/HRUpdateEmployeeWorkingTimeView';
+import MovieFrontOfficeManageAddMemberView from './MovieFrontOffice/MovieFrontOfficeManageAddMemberView/MovieFrontOfficeManageAddMemberView';
+import PrintMembershipCard from './Prints/PrintMembershipCard';
 
 function App() {
   return (
@@ -61,9 +68,19 @@ function App() {
           <Route exact path="/hr/salary-change-requests" element={<HRManageSalaryChangeRequestView />}></Route>
           <Route exact path="/hr/warning-letter-proposals" element={<HRManageWarningLetterProposalsView />}></Route>
           <Route exact path="/hr/terminiation-letter-proposals" element={<HRManageTerminationLetterProposalsView />}></Route>
+          <Route exact path="/hr/update-working-time" element={<HRUpdateEmployeeWorkingTimeView />}></Route>
 
           <Route exact path="/external/add-partner" element={<ExternalManageAddPartnerView />}></Route>
+          <Route exact path="/external/record-external-information" element={<ExternalManageRecordExternalInformation />}></Route>
 
+          <Route exact path="/storage/add-facility-and-equipment" element={<StorageManageAddFacilityView />}></Route>
+          <Route exact path="/storage/facilities-to-purchase" element={<StorageManageFacilitiesToPurchase />}></Route>
+
+          <Route exact path="/movie-front-office/add-member" element={<MovieFrontOfficeManageAddMemberView />}></Route>
+
+          <Route exact path="/print-facility" element={<PrintFacility />}></Route>
+          <Route exact path="/print-membership-card" element={<PrintMembershipCard />}></Route>
+  
         </Routes>
       </div> 
     </Router>

@@ -1,4 +1,4 @@
-import { addDoc, collection, getDocs } from "firebase/firestore";
+import { addDoc, collection, doc, getDocs, updateDoc } from "firebase/firestore";
 import { db } from "../Utility/firebase-config";
 
 class WorkingTime{
@@ -36,6 +36,22 @@ class WorkingTime{
     const workingTimesCollectionRef = collection(db, "working-times");
     const data = await getDocs(workingTimesCollectionRef);
     return data;
+
+  }
+
+  static async updateWorkingTime(id, monday, tuesday, wednesday, thursday, friday, saturday, sunday){
+
+    const toUpdate = {
+                      monday: monday, 
+                      tuesday: tuesday, 
+                      wednesday: wednesday,
+                      thursday: thursday,
+                      friday: friday,
+                      saturday: saturday,
+                      sunday: sunday
+                    };
+    const workingTimeDoc = doc(db, 'working-times', id);
+    await updateDoc(workingTimeDoc, toUpdate);
 
   }
 
