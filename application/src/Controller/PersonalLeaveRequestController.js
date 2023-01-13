@@ -15,6 +15,12 @@ class PersonalLeaveRequestController{
 
   }
 
+  static updateLeaveRequestStatus(id, status){
+
+    PersonalLeaveRequest.updateLeaveRequestStatus(id, status)
+
+  }
+
 }
 
 export default PersonalLeaveRequestController;

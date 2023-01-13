@@ -1,0 +1,14 @@
+@import url("../../../View/global.css");
+
+.submit-button{
+  height: 20px;
+  width: 50px;
+  border-radius: 5px;
+  background-color: var(--tertiary);
+  border: 2px solid var(--tertiary);
+}
+
+.submit-button:hover{
+  color: var(--tertiary);
+  background-color: var(--primary-dark);
+}

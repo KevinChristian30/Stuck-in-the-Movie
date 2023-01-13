@@ -1,0 +1,9 @@
+.hr-manage-personal-leave-requests-view #data-container{
+  margin: 0 30px 0 30px;
+}
+
+.hr-manage-personal-leave-requests-view .action-container{
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+}

@@ -3,8 +3,8 @@ import "./AddEmployee.css";
 import { useState } from "react";
 
 import NavBar from "../../Components/NavBar/NavBar";
-import AddEmployeeController from "../../Controller/AddEmployeeController";
 import { useNavigate } from "react-router-dom";
+import EmployeeController from "../../Controller/EmployeeController";
 
 const AddEmployee = () => {
 
@@ -22,7 +22,7 @@ const AddEmployee = () => {
   const handleAddEmployee = (e) => {
 
     e.preventDefault();
-    AddEmployeeController.createEmployee(name, email, phoneNumber, gender, department, salary, address, dateOfBirth);
+    EmployeeController.createEmployee(name, email, phoneNumber, gender, department, salary, address, dateOfBirth);
     
     alert('Employee Created!');
     nav('/');

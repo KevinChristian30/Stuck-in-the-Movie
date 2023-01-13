@@ -17,6 +17,13 @@ import ManagerManageEmployeesWarningLetterProposalsView from './Manager/ManagerM
 import ManagerManageEmployeesResignationProposalsView from './Manager/ManagerManageEmployeesResignationProposalsView/ManagerManageEmployeesResignationProposalsView';
 import ManagerManageViewEmployeesView from './Manager/ManagerManageViewEmployeesView/ManagerManageViewEmployeesView';
 import AccountingAndFinanceManageFundAndFacilityRequestsView from './AccountingAndFinance/AccountingAndFinanceManageFundAndFacilityRequestsView/AccountingAndFinanceManageFundAndFacilityRequestsView';
+import HRManagePersonalLeaveRequestsView from './HR/HRManagePersonalLeaveRequests/HRManagePersonalLeaveRequestsView';
+import HRManageSalaryChangeRequestView from './HR/HRManageSalaryChangeRequestView/HRManageSalaryChangeRequestView';
+import ManagerManageEmployeesSalaryChangeProposalsView from './Manager/ManagerManageEmployeesSalaryChangeProposalsView/ManagerManageEmployeesSalaryChangeProposalsView';
+import HRManageWarningLetterProposalsView from './HR/HRManageWarningLetterProposalsView/HRManageWarningLetterProposalsView';
+import HRManageTerminationLetterProposalsView from './HR/HRManageTerminationLetterProposalsView/HRManageTerminationLetterProposalsView';
+import ManagerManageEmployeesTerminationLetterProposalsView from './Manager/ManagerManageEmployeesTerminationLetterProposalsView/ManagerManageEmployeesTerminationLetterProposalsView';
+import ExternalManageAddPartnerView from './External/ExternalManageAddPartnerView/ExternalManageAddPartnerView';
 
 function App() {
   return (
@@ -44,8 +51,18 @@ function App() {
           <Route exact path="/manager/employees/view-employees" element={<ManagerManageViewEmployeesView />}></Route>
           <Route exact path="/manager/employees/employee-resignation-proposals" element={<ManagerManageEmployeesResignationProposalsView />}></Route>
           <Route exact path="/manager/employees/warning-letter-proposals" element={<ManagerManageEmployeesWarningLetterProposalsView/>}></Route>
+          <Route exact path="/manager/employees/termination-letter-proposals" element={<ManagerManageEmployeesTerminationLetterProposalsView />}></Route>
+          <Route exact path="/manager/employees/salary-change-proposals" element={<ManagerManageEmployeesSalaryChangeProposalsView />}></Route>
 
           <Route exact path="/accounting-and-finance/fund-and-facility-requests" element={<AccountingAndFinanceManageFundAndFacilityRequestsView />}></Route>
+
+          <Route exact path="/hr/add-employee" element={<AddEmployee />}></Route>
+          <Route exact path="/hr/personal-leave-requests" element={<HRManagePersonalLeaveRequestsView />}></Route>
+          <Route exact path="/hr/salary-change-requests" element={<HRManageSalaryChangeRequestView />}></Route>
+          <Route exact path="/hr/warning-letter-proposals" element={<HRManageWarningLetterProposalsView />}></Route>
+          <Route exact path="/hr/terminiation-letter-proposals" element={<HRManageTerminationLetterProposalsView />}></Route>
+
+          <Route exact path="/external/add-partner" element={<ExternalManageAddPartnerView />}></Route>
 
         </Routes>
       </div> 

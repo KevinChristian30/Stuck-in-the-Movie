@@ -39,8 +39,15 @@ class Employee{
       EmployeeStatus: this.status
     });
 
-    console.log(this.email);
     WorkingTimeController.createWorkingTime(this.email);
+
+  }
+
+  static async read(){
+
+    const employeeCollectionRef = collection(db, 'employees');
+    const data = await getDocs(employeeCollectionRef);
+    return data;
 
   }
 

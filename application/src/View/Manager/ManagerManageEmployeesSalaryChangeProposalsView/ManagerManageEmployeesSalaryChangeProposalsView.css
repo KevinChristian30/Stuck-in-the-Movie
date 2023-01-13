@@ -1,0 +1,13 @@
+.manager-manage-employees-salary-change-proposals-view
+.container{
+  margin: 0 30px 0 30px;
+}
+
+.manager-manage-employees-salary-change-proposals-view
+.container
+.action-container{
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

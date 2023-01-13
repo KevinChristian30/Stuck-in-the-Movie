@@ -1,2 +1,12 @@
 @import url("../../../View/global.css");
 
+.manager-manage-employees-warning-letter-proposal .container{
+  margin: 0 30px 0 30px;
+}
+
+.manager-manage-employees-warning-letter-proposal .container .action-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 150px;
+}

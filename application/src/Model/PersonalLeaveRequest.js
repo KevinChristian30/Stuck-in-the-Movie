@@ -1,4 +1,4 @@
-import { addDoc, collection, getDocs } from "firebase/firestore";
+import { addDoc, collection, doc, getDocs, updateDoc } from "firebase/firestore";
 import { db } from "../Utility/firebase-config";
 
 class PersonalLeaveRequest{
@@ -29,6 +29,14 @@ class PersonalLeaveRequest{
     const personalLeaveRequestCollectionRef = collection(db, 'personal-leave-requests');
     const data = await getDocs(personalLeaveRequestCollectionRef);
     return data;
+
+  }
+
+  static async updateLeaveRequestStatus(id, status){
+
+    const toUpdate = {status: status};
+    const leaveRequestDoc = doc(db, 'personal-leave-requests', id);
+    await updateDoc(leaveRequestDoc, toUpdate);
 
   }
 
