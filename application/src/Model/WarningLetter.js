@@ -5,10 +5,11 @@ import { v4 } from 'uuid';
 
 class WarningLetter{
 
-  constructor(file){
+  constructor(file, email){
     this.identifier = v4();
     this.status = 'Pending';
     this.file = file;
+    this.employeeEmail = email;
   }
 
   async create(){
@@ -21,7 +22,8 @@ class WarningLetter{
     await addDoc(warningLetterCollectionRef, {
       identifier: this.identifier,
       status: this.status,
-      fileURL: await getDownloadURL(fileRef)
+      fileURL: await getDownloadURL(fileRef),
+      employeeEmail: this.employeeEmail
     });
 
   }

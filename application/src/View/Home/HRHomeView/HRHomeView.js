@@ -10,6 +10,9 @@ const HRHomeView = () => {
         <Link to="/hr/add-employee">
           <RouteCard className="card" title="Add Employee"/>
         </Link>
+        <Link to="/hr/view-employees">
+          <RouteCard className="card" title="View Employees"/>
+        </Link>
         <Link to="/hr/personal-leave-requests">
           <RouteCard className="card" title="Personal Leave Requests"/>
         </Link>
@@ -21,6 +24,9 @@ const HRHomeView = () => {
         </Link>
         <Link to="/hr/terminiation-letter-proposals">
           <RouteCard className="card" title="Propose Termination Letter"/>
+        </Link>
+        <Link to="/hr/view-working-times">
+          <RouteCard className="card" title="View Working Times"/>
         </Link>
         <Link to="/hr/update-working-time">
           <RouteCard className="card" title="Update Working Time"/>

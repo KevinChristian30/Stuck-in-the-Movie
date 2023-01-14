@@ -12,13 +12,14 @@ const MovieFrontOfficeManageAddMemberView = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [address, setAddress] = useState('');
   const [dateOfBirth, setDateOfBirth] = useState('');
+  const [paymentMethod, setPaymentMethod] = useState('');
 
   const nav = useNavigate();
 
-  const handleAddEmployee = (e) => {
+  const handleAddMember = (e) => {
 
     e.preventDefault();
-    MemberController.createMember(name, gender, email, phoneNumber, address, dateOfBirth);
+    MemberController.createMember(name, gender, email, phoneNumber, address, dateOfBirth, paymentMethod);
     nav('/print-membership-card', { state: { email : email, name : name } });
 
   }
@@ -30,7 +31,7 @@ const MovieFrontOfficeManageAddMemberView = () => {
 
       <div className="add-employee">
         
-        <form action="" id="add-employee-form" onSubmit={handleAddEmployee}>
+        <form action="" id="add-employee-form" onSubmit={handleAddMember}>
           <h1 id="title">Add Member</h1>
           <br />  
           <div className="add-employee-input-container">    
@@ -60,6 +61,15 @@ const MovieFrontOfficeManageAddMemberView = () => {
           <div className="add-employee-input-container">
             <label htmlFor="add-employee-dob">Date of Birth</label>
             <input type="date" id="add-employee-dob" value={dateOfBirth} onChange={e => setDateOfBirth(e.target.value)} />
+          </div>
+          <div className="add-employee-input-container">
+            <label htmlFor="add-employee-gender">Payment Method</label>
+            <select name="add-employee-gender" id="add-employee-gender" value={paymentMethod} onChange={e => setPaymentMethod(e.target.value)}>
+              <option value="-">-</option>
+              <option value="Cash">Cash</option>
+              <option value="OVO">OVO</option>
+              <option value="Gopay">Gopay</option>
+            </select>
           </div>
           <div className="add-employee-input-container">
             <button id="add-employee-submit-button">Add Member</button>

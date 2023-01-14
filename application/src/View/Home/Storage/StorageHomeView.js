@@ -13,6 +13,9 @@ const StorageHomeView = () => {
         <Link to="/storage/facilities-to-purchase">
           <RouteCard className="card" title="Facilities to Purchase"/>
         </Link>
+        <Link to="/storage/broken-facilities-report">
+          <RouteCard className="card" title="Broken Facilities Report"/>
+        </Link>
         <br /><br /><br /><br />
       </div>
 

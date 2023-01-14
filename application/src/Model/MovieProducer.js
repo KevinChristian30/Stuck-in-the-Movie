@@ -1,5 +1,5 @@
 import { db } from "../Utility/firebase-config";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, getDocs } from "firebase/firestore";
 
 class MovieProducer{
 
@@ -19,6 +19,14 @@ class MovieProducer{
       phoneNumber: this.phoneNumber,
       address: this.address
     });
+
+  }
+
+  static async read(){
+
+    const movieProducersCollectionRef = collection(db, 'movie-producers');
+    const data = await getDocs(movieProducersCollectionRef);
+    return data;
 
   }
 

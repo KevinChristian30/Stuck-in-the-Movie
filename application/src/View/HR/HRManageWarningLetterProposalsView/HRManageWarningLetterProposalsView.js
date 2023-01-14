@@ -10,6 +10,8 @@ const HRManageWarningLetterProposalsView = () => {
   const [file, setFile] = useState(null);
   const [warningLetters, setWarningLetters] = useState([]);
 
+  const [email, setEmail] = useState('');
+
   let data = [];
 
   const handleCreateWarningLetter = (e) => {
@@ -17,7 +19,7 @@ const HRManageWarningLetterProposalsView = () => {
     e.preventDefault();
     if (file == null) return;
 
-    WarningLetterController.createWarningLetter(file);
+    WarningLetterController.createWarningLetter(file, email);
     alert("File Uploaded");
 
   }
@@ -41,6 +43,7 @@ const HRManageWarningLetterProposalsView = () => {
     data.push({
       id: item.identifier,
       status: item.status,
+      employeeEmail: item.employeeEmail,
       action: <a className="view-link" href={item.fileURL} target="_blank">View</a>
     });
 
@@ -56,6 +59,11 @@ const HRManageWarningLetterProposalsView = () => {
         name: 'Status',
         selector: row => row.status,
         sortable: true
+    },
+    {
+      name: 'Employee Email',
+      selector: row => row.employeeEmail,
+      sortable: true
     },
     {
       name: 'Action',
@@ -89,6 +97,8 @@ const HRManageWarningLetterProposalsView = () => {
 
         <form action="" className="file-input">
           <input type="file" onChange={ e => {setFile(e.target.files[0])} } />
+          <input type="email" value={email} onChange={e => setEmail(e.target.value)} 
+          placeholder="... Employee Email" id="email-input"/>
           <button onClick={ handleCreateWarningLetter } id="submit-button">Submit Warning Letter</button>
         </form>
 

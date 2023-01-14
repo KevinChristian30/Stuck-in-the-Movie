@@ -62,9 +62,10 @@ const ManagerManageEmployeesWarningLetterProposalsView = () => {
 
   }, []);
 
-  const handleAccept = (id) => {
+  const handleAccept = (id, URL) => {
 
     WarningLetterController.setWarningLetterStatus(id, 'Accepted');
+    // AcceptedWarningLetter.createWarningLetter();
     alert('Warning Letter Accepted');
 
   }
@@ -85,7 +86,7 @@ const ManagerManageEmployeesWarningLetterProposalsView = () => {
         status: item.status,
         action: <div className="action-container">
                   <a className="view-link" href={item.fileURL} target="_blank">View</a>
-                  <AcceptButton onclick={() => { handleAccept(item.id) }} />
+                  <AcceptButton onclick={() => { handleAccept(item.id, item.fileURL) }} />
                   <RejectButton onclick={() => { handleReject(item.id) }} />
                 </div> 
       });

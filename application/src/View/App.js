@@ -31,6 +31,14 @@ import ExternalManageRecordExternalInformation from './External/ExternalManageRe
 import HRUpdateEmployeeWorkingTimeView from './HR/HRUpdateEmployeeWorkingTimeView/HRUpdateEmployeeWorkingTimeView';
 import MovieFrontOfficeManageAddMemberView from './MovieFrontOffice/MovieFrontOfficeManageAddMemberView/MovieFrontOfficeManageAddMemberView';
 import PrintMembershipCard from './Prints/PrintMembershipCard';
+import StorageManageBrokenFacilityReportsView from './Storage/StorageManageBrokenFacilityReportsView/StorageManageBrokenFacilityReportsViewStorageManageBrokenFacilityReportsView';
+import ExternalViewAdvertisementPartnersView from './External/ExternalViewAdvertisementPartnersView/ExternalViewAdvertisementPartnersView';
+import HRManageViewEmployeesView from './HR/HRManageViewEmployeesView/HRManageViewEmployeesView';
+import HRViewWorkingTimeView from './HR/HRViewWorkingTimeView/HRViewWorkingTimeView';
+import PromotionAndEventViewMembersView from './PromotionAndEvent/PromotionAndEventViewMembersView/PromotionAndEventViewMembersView';
+import ExternalViewMovieProducersView from './External/ExternalViewMovieProducersView/ExternalViewMovieProducersView';
+import ExternalAddMovieView from './External/ExternalAddMovieView/ExternalAddMovieView';
+import MovieScheduleGenerateMovieSchedulesView from './MovieSchedule/MovieScheduleGenerateMovieSchedulesView/MovieScheduleGenerateMovieSchedulesView';
 
 function App() {
   return (
@@ -64,23 +72,34 @@ function App() {
           <Route exact path="/accounting-and-finance/fund-and-facility-requests" element={<AccountingAndFinanceManageFundAndFacilityRequestsView />}></Route>
 
           <Route exact path="/hr/add-employee" element={<AddEmployee />}></Route>
+          <Route exact path="/hr/view-employees" element={<HRManageViewEmployeesView />}></Route>
           <Route exact path="/hr/personal-leave-requests" element={<HRManagePersonalLeaveRequestsView />}></Route>
           <Route exact path="/hr/salary-change-requests" element={<HRManageSalaryChangeRequestView />}></Route>
           <Route exact path="/hr/warning-letter-proposals" element={<HRManageWarningLetterProposalsView />}></Route>
           <Route exact path="/hr/terminiation-letter-proposals" element={<HRManageTerminationLetterProposalsView />}></Route>
           <Route exact path="/hr/update-working-time" element={<HRUpdateEmployeeWorkingTimeView />}></Route>
-
+          <Route exact path="/hr/view-working-times" element={<HRViewWorkingTimeView />}></Route>
+          
           <Route exact path="/external/add-partner" element={<ExternalManageAddPartnerView />}></Route>
           <Route exact path="/external/record-external-information" element={<ExternalManageRecordExternalInformation />}></Route>
+          <Route exact path="/external/view-advertisement-partners" element={<ExternalViewAdvertisementPartnersView />}></Route>
+          <Route exact path="/external/view-movie-producers" element={<ExternalViewMovieProducersView />}></Route>
+          <Route exact path="/external/add-movie" element={<ExternalAddMovieView />}></Route>
 
           <Route exact path="/storage/add-facility-and-equipment" element={<StorageManageAddFacilityView />}></Route>
           <Route exact path="/storage/facilities-to-purchase" element={<StorageManageFacilitiesToPurchase />}></Route>
-
+          <Route exact path="/storage/broken-facilities-report" element={<StorageManageBrokenFacilityReportsView />}></Route>
+          
           <Route exact path="/movie-front-office/add-member" element={<MovieFrontOfficeManageAddMemberView />}></Route>
+
+          <Route exact path="/movie-schedule/generate-schedule" element={<MovieScheduleGenerateMovieSchedulesView />}></Route>
+
+          <Route exact path="/promotion-and-event/view-members" element={<PromotionAndEventViewMembersView />}></Route>
 
           <Route exact path="/print-facility" element={<PrintFacility />}></Route>
           <Route exact path="/print-membership-card" element={<PrintMembershipCard />}></Route>
-  
+          
+          
         </Routes>
       </div> 
     </Router>

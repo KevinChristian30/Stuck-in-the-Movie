@@ -1,4 +1,4 @@
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, getDocs } from "firebase/firestore";
 import { db } from "../Utility/firebase-config";
 
 class AdvertisementPartner{
@@ -19,6 +19,14 @@ class AdvertisementPartner{
       phoneNumber: this.phoneNumber,
       address: this.address
     });
+
+  }
+
+  static async read(){
+
+    const advertisementPartnersCollectionRef = collection(db, 'ad-partners');
+    const data = await getDocs(advertisementPartnersCollectionRef);
+    return data;
 
   }
 

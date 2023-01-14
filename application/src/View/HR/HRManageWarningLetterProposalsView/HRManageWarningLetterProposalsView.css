@@ -40,3 +40,13 @@
 .view-link{
   background: none;
 }
+
+.hr-manage-warning-letter-proposals-view .container #email-input{
+  border: 2px solid var(--tertiary);
+  color: var(--tertiary);
+}
+
+
+.hr-manage-warning-letter-proposals-view .container #email-input::placeholder{
+  color: var(--tertiary);
+}

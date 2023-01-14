@@ -1,0 +1,8 @@
+.broken-facility-report-view .container{
+  margin: 0 30px 0 30px;
+}
+
+.broken-facility-report-view .container .expand-container .report-broken-container{
+  margin: -140px 0 -100px 0;
+  font-family: var(--main-font);
+}

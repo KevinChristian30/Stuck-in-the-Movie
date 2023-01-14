@@ -42,6 +42,14 @@ class Facility{
 
   }
 
+  static async updateBrokenDescription(id, description, email){
+
+    const toUpdate = {brokenDescription: description, reporterEmail: email};
+    const facilityDoc = doc(db, 'facilities', id);
+    await updateDoc(facilityDoc, toUpdate);
+
+  }
+
 }
 
 export default Facility;

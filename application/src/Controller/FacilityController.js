@@ -22,6 +22,12 @@ class FacilityController{
 
   }
 
+  static setBrokenDescription(id, description, email){
+
+    Facility.updateBrokenDescription(id, description, email);
+
+  }
+
 }
 
 export default FacilityController;

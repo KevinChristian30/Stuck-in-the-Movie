@@ -2,9 +2,9 @@ import WarningLetter from "../Model/WarningLetter";
 
 class WarningLetterController{
 
-  static createWarningLetter(file){
+  static createWarningLetter(file, email){
 
-    let warningLetter = new WarningLetter(file);
+    let warningLetter = new WarningLetter(file, email);
     warningLetter.create();
 
   }
