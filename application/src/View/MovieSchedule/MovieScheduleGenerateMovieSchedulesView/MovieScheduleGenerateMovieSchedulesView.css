@@ -1,0 +1,19 @@
+.movie-schedule-generate-movie-schedules-view .container{
+  margin: 0 30px 0 30px;
+}
+
+.movie-schedule-generate-movie-schedules-view .container .image-container img{
+  display: block;
+  width: auto;
+  height: 100px;
+  margin: 20px 0 20px 0;
+}
+
+.movie-schedule-generate-movie-schedules-view .container #submit-button{
+  width: 400px;
+  height: 50px;
+}
+
+.movie-schedule-generate-movie-schedules-view .container #submit-button:hover{
+  box-shadow: 0 0 1px 1px var(--tertiary);
+}

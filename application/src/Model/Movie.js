@@ -1,4 +1,4 @@
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, getDocs } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { db, storage } from "../Utility/firebase-config";
 import { v4 } from 'uuid';
@@ -30,6 +30,14 @@ class Movie{
       imageURL: await getDownloadURL(fileRef)
     });
 
+  }
+
+  static async read(){
+
+    const moviesCollectionRef = collection(db, 'movies');
+    const data = await getDocs(moviesCollectionRef);
+    return data;
+ 
   }
 
 }

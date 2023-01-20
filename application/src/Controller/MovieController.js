@@ -9,6 +9,12 @@ class MovieController{
 
   }
 
+  static async getMovies(){
+
+    return await Movie.read();
+
+  }
+
 }
 
 export default MovieController;
